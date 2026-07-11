@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { ProjectProvider } from './context/ProjectContext'
 import { ToastProvider } from './components/Toast'
 import { Navbar } from './components/Navbar'

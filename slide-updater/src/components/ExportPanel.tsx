@@ -1,11 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from './Button'
-import { Card, CardBody, CardHeader } from './Card'
 import { useProject } from '../context/ProjectContext'
 import { useToast } from './Toast'
-import * as PptxGenJS from 'pptxgen'
-
-const pptx = PptxGenJS.default || PptxGenJS
 
 export function ExportPanel() {
   const { getCurrentProject } = useProject()

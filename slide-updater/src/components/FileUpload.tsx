@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Card, CardBody } from './Card'
 import { Button } from './Button'
 import { useToast } from './Toast'
