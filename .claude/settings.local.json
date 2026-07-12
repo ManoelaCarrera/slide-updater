@@ -11,7 +11,9 @@
       "Bash(grep -r \"Lotka\" /tmp/xlsx_extract/xl/workbook.xml)",
       "mcp__plugin_bio-research_consensus__search",
       "Bash(cp /private/tmp/claude-501/-Users-manoelacarrera-Documents-Claude-Code-imersao-segundo-cerebro/853639ae-900d-4433-9faa-94003e50aeda/scratchpad/Lotka_Manuscrito.txt ~/Desktop/Lei_de_Lotka_Manuscrito.txt)",
-      "Read(//Users/manoelacarrera/Desktop/**)"
+      "Read(//Users/manoelacarrera/Desktop/**)",
+      "Bash(npm -v)",
+      "Bash(which -a node npm nvm 2>&1; ls -la ~/.nvm 2>&1 | head -5; cat ~/.zshrc 2>/dev/null | grep -i node; echo \"PATH=$PATH\")"
     ]
   }
 }
