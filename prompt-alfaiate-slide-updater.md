@@ -1,20 +1,24 @@
-# Prompt-Alfaiate: App de Atualização de Slides com Literatura Científica
+# Prompt-Alfaiate: Slide Updater — Atualização de Slides com Literatura Científica
 
 > **Uso**: Cole este prompt integralmente quando quiser que o Arquiteto de Apps crie o aplicativo de atualização de slides. Anexe o Design System quando solicitado.
+>
+> **Versão**: 2.0 — Simplificada, focada em controle e voz pedagógica da Profa
 
 ---
 
 ## BRIEFING EXECUTIVO
 
-Crie um **aplicativo web (SPA) de atualização dinâmica de slides de aulas** 100% funcional, pronto para produção, que:
+Crie um **aplicativo web (SPA) de atualização de slides de aulas** 100% funcional, pronto para produção, que permita à **Profa** (docente de Estomatologia/Patologia):
 
-- Permite que docentes carreguem ou importem slides existentes
-- Integra-se com Pubmed, Scopus e Web of Science para encontrar literatura científica recente
-- Sugere atualizações de conteúdo (novos estudos, descobertas, mudanças no estado da arte)
-- Propõe melhorias no design dos slides (modernização visual, reorganização)
-- Aplica automaticamente updates de conteúdo e design
-- Armazena tudo localmente (LocalStorage) — sem backend complexo
-- Exporta slides atualizados em formato padrão (PDF, PPTX, ou HTML)
+- **Carregar slides base** (PPTX, PDF, ou descrição de tópicos)
+- **Carregar fontes** (PDFs de artigos, imagens de livros digitais, arquivos .txt/.md com notas)
+- **Sugerir atualizações** (novos estudos, descobertas, gaps para complementação) com base nas fontes carregadas
+- **Validar antes de aplicar** com dois modos:
+  - Modo A: Validação passo-a-passo (aprova/rejeita cada sugestão)
+  - Modo B: Validação final (revisa tudo de uma vez)
+- **Preservar a voz pedagógica** da Profa (perguntas, desafios, método socrático — não substitui, complementa)
+- **Armazenar tudo localmente** (LocalStorage) — sem backend, sem APIs remotas
+- **Exportar slides atualizados** (PPTX, PDF)
 
 **Design System**: Utiliza exatamente o design system visual anexado a este prompt como verdade absoluta para cores, tipografia, spacing, componentes e estados.
 
@@ -23,21 +27,23 @@ Crie um **aplicativo web (SPA) de atualização dinâmica de slides de aulas** 1
 ## REQUISITOS TÉCNICOS
 
 ### Stack Obrigatória
-- **Frontend**: React 18+ (TypeScript, Vite ou Next.js)
+- **Frontend**: React 18+ (TypeScript, Vite)
 - **Styling**: Tailwind CSS
 - **State Management**: React Context + LocalStorage (sem Redux, sem servidor)
-- **APIs Externas**:
-  - PubMed Central API (gratuita, sem autenticação)
-  - Scopus API (requer chave; fallback local se não houver)
-  - Web of Science (requer chave; fallback local se não houver)
-- **Armazenamento Local**: localStorage (máx 5-10MB; compactar com gzip se necessário)
-- **Exportação**: html2pdf + pptxgen (para PPTX)
+- **Upload & Parse**:
+  - PPTX: `pptxgen` ou `pptx-parser` (extração e edição)
+  - PDF: `pdf.js` ou `pdfjs-dist` (visualização + extração de texto)
+  - Imagens: suporte nativo (armazenar como blob em localStorage)
+  - Texto: .txt e .md armazenados como strings
+- **Armazenamento Local**: localStorage (máx 10-50MB; compactar com gzip se necessário)
+- **Exportação**: `pptxgen` (para PPTX), `html2pdf` (para PDF)
 
 ### Proibições Explícitas
-- ❌ Sem backend Node, Python ou qualquer servidor externo
-- ❌ Sem autenticação de usuário (opcional: suportar export/import de projetos)
+- ❌ Sem backend, servidor externo, ou APIs remotas (PubMed, Scopus, WoS)
+- ❌ Sem autenticação de usuário
 - ❌ Sem banco de dados remoto
-- ❌ Sem dependências pesadas ou bibliotecas não testadas
+- ❌ Sem dependências pesadas ou não testadas
+- ❌ Sem chamadas HTTP para serviços externos (tudo é local)
 
 ---
 
@@ -59,45 +65,55 @@ Antes de iniciar, solicite que o design system seja disponibilizado. Ele deve co
 
 ## FLUXOS PRINCIPAIS (User Stories)
 
-### 1. Onboarding & Upload
-- [ ] Usuário acessa a app
-- [ ] Botão "Criar Novo Projeto" ou "Carregar Slides"
-- [ ] Upload de arquivo (PDF, imagem, ou descrição de tópicos)
-- [ ] Parser básico: extrai texto dos slides ou aceita texto direto
-- [ ] Slide preview e edição manual de conteúdo
-- [ ] Usuário pode revisar e ajustar antes de prosseguir
+### 1. Criar Projeto & Carregar Aula Base
+- [ ] Profa acessa o app
+- [ ] Clica "Novo Projeto" → define nome, disciplina (Estomatologia 1/2, Patologia Básica, Pós-grad)
+- [ ] **Upload da aula base**: PPTX ou descrição de tópicos
+  - Se PPTX: app extrai slides, preview visual
+  - Se descrição: aceita texto ou lista de tópicos
+- [ ] Profa revisa estrutura dos slides (pode editar, remover, reordenar)
+- [ ] Projeto salvo automaticamente em localStorage
 
-### 2. Análise de Literatura
-- [ ] Usuário clica "Buscar Atualizações"
-- [ ] App extrai palavras-chave dos slides (automático ou manual)
-- [ ] Faz buscas paralelas em Pubmed, Scopus, Web of Science
-- [ ] Retorna top 5-10 artigos relevantes por slide/tema
-- [ ] Mostra: título, autores, ano, abstract resumido, link
-- [ ] Loading states claros durante busca
-- [ ] Tratamento de erros gracioso (fallback, mensagens úteis)
+### 2. Carregar Fontes de Referência
+- [ ] Botão "Adicionar Fontes"
+- [ ] Upload de múltiplos arquivos: PDFs, imagens (screenshots de livros digitais), .txt, .md
+- [ ] Cada fonte é nomeada pela Profa (ex: "Stephen Sonis - OM Review 2024.pdf")
+- [ ] App exibe lista de fontes carregadas com tamanho e tipo
+- [ ] Profa pode visualizar preview de PDFs (pdf.js)
+- [ ] Remover fontes se necessário
 
-### 3. Sugestões de Atualização de Conteúdo
-- [ ] App oferece sugestões por slide: "Adicionar citação", "Atualizar dado", "Mencionar novo estudo"
-- [ ] Usuário revisa e aprova/rejeita cada sugestão (checkboxes)
-- [ ] Sugestões aprovadas são insertas no slide
-- [ ] Histórico de mudanças: undo/redo (últimas 20 ações)
-- [ ] Visual feedback de cada ação
+### 3. Análise & Sugestões de Atualização
+- [ ] Profa clica "Analisar Slides & Fontes"
+- [ ] App **extrai palavras-chave** dos slides (automático) + **busca nas fontes carregadas**
+- [ ] Retorna sugestões por slide:
+  - "Novo estudo encontrado: [título] ([ano]) — adicionar?"
+  - "Dado desatualizado: Seu slide diz X, mas [fonte] menciona Y"
+  - "Gap pedagógico: Você mencionou A, mas não fundamenta em B — sugerir complementação?"
+- [ ] **CRÍTICO**: Sugestões devem **preservar a voz e pedagogia da Profa** — não substitui perguntas por respostas, não mascara dúvidas
 
-### 4. Sugestões de Design
-- [ ] Análise básica: "Seu slide tem muito texto", "Falta visualização", "Cores monótonas"
-- [ ] Propostas:
-  - Rearranjar layout
-  - Inserir gráfico/diagrama baseado em dados
-  - Melhorar tipografia (contraste, hierarquia)
-  - Sugerir cores alternativas (usando design system)
-- [ ] User aceita proposta ou customiza manualmente
+### 4. Validação & Aplicação (Dois Modos)
+**Modo A — Passo-a-Passo (Padrão)**
+- [ ] Cada sugestão aparece como card
+- [ ] Profa: aprova (✓), rejeita (✗), ou edita (✏️) antes de aplicar
+- [ ] Sugestão aprovada é inserida no slide com marcação de "fonte" (data, arquivo)
+- [ ] Próxima sugestão aparece
+- [ ] Progresso visual (X de Y sugestões processadas)
 
-### 5. Preview e Exportação
-- [ ] Visualizar slides atualizados (carousel ou thumbnail grid)
-- [ ] Exportar como: PDF, PPTX, ou HTML interativo
-- [ ] Salvar projeto localmente (localStorage com backup)
-- [ ] Opção: Download de backup JSON (para reimportação)
-- [ ] Feedback visual confirmando sucesso de export
+**Modo B — Validação Final**
+- [ ] App aplica *todas* as sugestões simultaneamente (mas marcadas como "em revisão")
+- [ ] Profa visualiza slide completo com mudanças destacadas
+- [ ] Pode rejeitar mudanças em massa ou uma por uma
+- [ ] Confirma ao final
+
+- [ ] **Undo/Redo**: últimas 20 ações, qualquer momento
+- [ ] **Histórico de mudanças**: timeline com quem sugeriu o quê, quando
+
+### 5. Preview & Exportação
+- [ ] Visualizar slides atualizados (carousel antes/depois)
+- [ ] **Exportar como PPTX**: mantém formatação original + marcações de fontes
+- [ ] **Exportar como PDF**: para compartilhamento/impressão
+- [ ] **Salvar projeto**: backup automático em localStorage + download JSON manual
+- [ ] Feedback visual de sucesso
 
 ---
 
@@ -108,49 +124,62 @@ Antes de iniciar, solicite que o design system seja disponibilizado. Ele deve co
   "projects": [
     {
       "id": "uuid-xxx",
-      "name": "Biologia 101 - 2026",
+      "name": "Estomatologia 1 - 2026",
+      "discipline": "estomatologia1",
       "createdAt": "2026-07-11T...",
       "updatedAt": "2026-07-11T...",
-      "slides": [
+      "sources": [
         {
-          "id": "slide-001",
-          "title": "Introdução à Genética",
-          "originalContent": "...",
-          "currentContent": "...",
-          "keywords": ["gene", "DNA", "herança"],
-          "literatureUpdates": [
-            {
-              "id": "lit-001",
-              "source": "pubmed",
-              "title": "...",
-              "year": 2026,
-              "authors": "...",
-              "pmid": "...",
-              "abstract": "...",
-              "url": "...",
-              "approved": true,
-              "insertedAt": "2026-07-11T..."
-            }
-          ],
-          "designNotes": {
-            "lastUpdated": "2026-07-11T...",
-            "suggestions": [],
-            "appliedChanges": []
-          },
-          "exportFormats": {
-            "pdf": "blob-url-xxx",
-            "pptx": "blob-url-xxx"
+          "id": "source-001",
+          "name": "Stephen Sonis - OM Review 2024.pdf",
+          "type": "pdf",
+          "uploadedAt": "2026-07-11T...",
+          "fileSize": 2048000,
+          "metadata": {
+            "pages": 42,
+            "extractedText": "..."
           }
         }
       ],
+      "slides": [
+        {
+          "id": "slide-001",
+          "order": 1,
+          "title": "Mucosite Oral - Definição e Epidemiologia",
+          "originalContent": "...",
+          "currentContent": "...",
+          "keywords": ["mucosite", "rádio-induzida", "quimio-induzida"],
+          "suggestions": [
+            {
+              "id": "sugg-001",
+              "type": "add_citation",
+              "sourceId": "source-001",
+              "suggestedText": "Novo estudo de Sonis (2024) indica...",
+              "reason": "Complementa discussão sobre mecanismo",
+              "status": "pending|approved|rejected",
+              "appliedAt": "2026-07-11T..." | null
+            }
+          ],
+          "appliedChanges": [
+            {
+              "id": "change-001",
+              "timestamp": "2026-07-11T...",
+              "type": "add_citation",
+              "sourceId": "source-001",
+              "insertedText": "...",
+              "position": "after_paragraph_3"
+            }
+          ]
+        }
+      ],
       "settings": {
-        "autoUpdateFrequency": "weekly",
-        "preferredExportFormat": "pdf"
+        "validationMode": "step-by-step|final-review",
+        "preferredExportFormat": "pptx"
       },
       "changelog": [
         {
           "timestamp": "2026-07-11T...",
-          "action": "added_literature",
+          "action": "source_added|suggestion_approved|change_applied",
           "slideId": "slide-001",
           "details": "..."
         }
@@ -164,80 +193,99 @@ Antes de iniciar, solicite que o design system seja disponibilizado. Ele deve co
 
 ## COMPONENTES OBRIGATÓRIOS
 
-1. **Navbar/Header**: Logo, título do projeto, menu principal (Home, Settings, Help)
-2. **Sidebar**: Listagem de slides, filtros, configurações
-3. **Slide Editor**: Editor WYSIWYG simples (rich text + imagem, inline)
-4. **Literature Panel**: Exibe artigos encontrados, com botões aprovar/descartar, expandir abstract
-5. **Design Suggester**: Mostra propostas de redesign com previews
-6. **Preview**: Visualiza slide atualizado em tempo real (lado a lado: antes/depois)
-7. **Export Modal**: Opções de exportação (PDF/PPTX/HTML) com progresso
-8. **Settings Panel**: Frequência de atualização, chaves de API (opcional)
-9. **History/Changelog**: Timeline de todas as mudanças feitas, com botões undo/redo
-10. **Toast/Notification System**: Feedback visual para todas as ações async
+1. **Navbar/Header**: Logo, título do projeto, menu principal (Home, Settings, Export)
+2. **Sidebar**: 
+   - Listagem de slides com navegação
+   - Lista de fontes carregadas (com ícone de tipo)
+   - Botão "Adicionar Fontes"
+3. **Source Manager Panel**: 
+   - Upload de múltiplos arquivos (drag-drop)
+   - Visualização de fontes carregadas
+   - Preview de PDFs (pdf.js)
+   - Remover fonte
+4. **Slide Editor**: 
+   - Editor de texto simples (rich text básico)
+   - Visualização de conteúdo original vs. atual
+   - Edição inline de sugestões aprovadas
+5. **Suggestions Panel**: 
+   - Modo A: Exibe sugestões uma por uma (card)
+     - Botões: Aprovar (✓), Rejeitar (✗), Editar (✏️)
+     - Mostra fonte da sugestão
+   - Modo B: Lista todas as sugestões com status
+6. **Slide Preview**: 
+   - Visualização lado-a-lado: Antes | Depois
+   - Highlightings de mudanças
+7. **Export Modal**: Opções PPTX e PDF com progresso
+8. **Settings Panel**: Modo de validação, disciplina, nome do projeto
+9. **History/Changelog**: Timeline de mudanças com undo/redo (últimas 20 ações)
+10. **Toast/Notification System**: Feedback visual para todas as ações
 
 ---
 
-## INTEGRAÇÕES DE API
+## PROCESSAMENTO LOCAL DE FONTES
 
-### PubMed
-- **Endpoint**: `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi`
-- Busca por keyword + year filter
-- Retorna PMIDs; depois faz fetch de abstracts via `efetch`
-- Sem autenticação (rate limit: ~1 req/seg)
-- Tratamento de retry automático para timeouts
+### Extração de Texto
+- **PDFs**: Usar `pdf.js` (pdfjs-dist) para extrair texto pagina por pagina
+- **Imagens**: Aceitar visualização mas sem OCR obrigatório (OCR é opcional para futuro)
+- **Texto/Markdown**: Armazenar como strings direto
 
-### Scopus
-- **Endpoint**: `https://api.elsevier.com/content/search/scopus`
-- Requer API key (armazenar em localStorage como opcional)
-- Se a key não existir, desabilitar gracefully ou usar fallback
-- Busca por query, retorna títulos + citações
+### Busca nas Fontes
+- **Algoritmo**: 
+  1. App extrai palavras-chave do slide (usando simple tokenization)
+  2. Busca ocorrências nas fontes carregadas (busca exata ou fuzzy string matching)
+  3. Retorna snippets de contexto (ex: 50 palavras antes + depois)
+  4. Apresenta ao usuário como "encontrado em [fonte], página X"
+- **Sem busca em nuvem, sem APIs externas** — tudo roda no navegador
 
-### Web of Science
-- Requer credenciais
-- Se não houver, desabilitar gracefully
-- Fallback: buscar no PubMed apenas
-
-**Nota Importante**: Todas as buscas devem ser assíncronas, com loading indicador e tratamento de erro. Implementar retry logic e graceful degradation se uma base falhar.
+### Análise de Gaps & Complementações
+- App sugere: "Esta seção menciona X mas não cita [fonte Y que fala sobre X]"
+- Profa decide se quer adicionar referência ou não
 
 ---
 
 ## CRITÉRIOS DE ACEITAÇÃO (Checklist)
 
 ### Funcionalidade
-- [x] Usuário consegue criar novo projeto ou carregar slides (texto/imagem/PDF)
-- [x] App busca literatura em Pubmed sem erros
-- [x] Sugestões aparecem ordenadas por relevância (ano + citações + match score)
-- [x] Usuário pode aceitar/rejeitar/editar sugestões
-- [x] Conteúdo atualizado é inserido corretamente nos slides
-- [x] Design suggestions aparecem e são aplicáveis
-- [x] Dados salvam em localStorage sem perder ao refresh
-- [x] Exportação funciona (PDF e PPTX com formatação respeitada)
-- [x] Undo/Redo funciona (últimas 20 ações, com histórico visual)
-- [x] Compartilhamento/export de projetos (JSON backup)
+- [ ] Profa consegue criar novo projeto (nome, disciplina)
+- [ ] Carrega PPTX base e app extrai slides corretamente
+- [ ] Upload múltiplo de fontes (PDFs, imagens, .txt, .md) sem erros
+- [ ] Preview de PDFs funciona (pdf.js)
+- [ ] App extrai palavras-chave dos slides
+- [ ] Busca nas fontes retorna snippets relevantes
+- [ ] Sugestões aparecem com informação de fonte
+- [ ] Modo A funciona: aprova/rejeita/edita sugestões passo-a-passo
+- [ ] Modo B funciona: visualiza todas as sugestões de uma vez
+- [ ] Sugestões aprovadas são inseridas corretamente no slide
+- [ ] Undo/Redo funciona (últimas 20 ações)
+- [ ] Dados salvam em localStorage sem perder ao refresh
+- [ ] Exportação PPTX funciona (preserva formatação original)
+- [ ] Exportação PDF funciona (para compartilhamento)
+- [ ] Backup JSON (export/import de projetos)
 
 ### Design & UX
-- [x] Interface segue **exatamente** o design system anexado
-- [x] Responsivo (desktop 1280px+, tablet 768px+, mobile 375px+)
-- [x] Sem erros de console (warnings aceitáveis)
-- [x] Loading states em todas as ações async (spinners, skeleton screens)
-- [x] Feedbacks visuais claros (toasts, badges, state changes)
-- [x] Acessibilidade básica (ARIA labels, contraste WCAG AA, keyboard nav)
-- [x] Dark mode (se design system oferecer, automaticamente detectado)
+- [ ] Interface segue **exatamente** o design system anexado
+- [ ] Responsivo (desktop 1280px+, tablet 768px+, mobile 375px+)
+- [ ] Sem erros de console
+- [ ] Loading states para upload e análise
+- [ ] Feedback visual claro (toasts, badges, highlights de mudanças)
+- [ ] Acessibilidade básica (ARIA labels, contraste WCAG AA, keyboard nav)
+- [ ] Dark mode (se design system oferecer)
+- [ ] **VOZ PEDAGÓGICA**: Sugestões não substituem perguntas por respostas; preservam espaço para raciocínio da Profa
 
 ### Performance
-- [x] Carregamento inicial < 2s (conexão 4G, Lighthouse score > 80)
-- [x] Busca de literatura responsiva < 5s
-- [x] Nenhum memory leak detectável (dev tools)
-- [x] LocalStorage compactado (gzip) se > 1MB
-- [x] Lazy loading de imagens e componentes
+- [ ] Carregamento inicial < 3s
+- [ ] Análise de fontes responsiva (< 5s para PDF 10MB)
+- [ ] Nenhum memory leak detectável
+- [ ] LocalStorage compactado se > 5MB
+- [ ] Lazy loading de PDFs
 
 ### Robustez
-- [x] Trata erros de API (fallback, retry, mensagens claras)
-- [x] Trata arquivos inválidos (upload, parsing) com feedback útil
-- [x] Undo/Redo funciona sem perda de dados
-- [x] Sem perda de dados ao fechar/reabrir app (persistência automática)
-- [x] Validação de entrada (sanitize de conteúdo, XSS prevention)
-- [x] Rate limiting respeito (não sobrecarregar APIs)
+- [ ] Trata upload de arquivos inválidos com mensagens úteis
+- [ ] Trata PDFs corrompidos gracefully
+- [ ] Undo/Redo sem perda de dados
+- [ ] Persistência automática (nada se perde ao fechar)
+- [ ] Sanitização de conteúdo (XSS prevention)
+- [ ] Sem dependência de serviços externos
 
 ---
 
@@ -258,11 +306,12 @@ Antes de iniciar, solicite que o design system seja disponibilizado. Ele deve co
 
 ## NOTAS CRÍTICAS
 
-- **Design System é lei**: Nenhuma divergência visual. Se houver dúvida, estenda coerentemente dentro do system, nunca contra ele.
-- **Dados nunca se perdem**: LocalStorage é a única fonte de verdade. Implemente auto-save a cada mudança.
-- **APIs são optativas no setup**: O app deve funcionar offline se o usuário não configurar keys de Scopus/WoS.
-- **Acessibilidade não é opcional**: Keyboard nav, screen reader support, ARIA labels em todos os components interativos.
-- **Exportação é crítica**: PDF e PPTX devem ser pixel-perfect conforme design system.
+- **Design System é lei**: Nenhuma divergência visual. Se houver dúvida, estenda coerentemente dentro do system.
+- **Dados nunca se perdem**: LocalStorage é a única fonte de verdade. Auto-save a cada mudança.
+- **Zero dependência externa**: Nenhuma chamada HTTP, nenhuma API. Tudo roda no navegador.
+- **Voz pedagógica é inviolável**: Sugestões complementam, não substituem. Nunca substitua perguntas por respostas. Profa mantém controle total.
+- **Acessibilidade não é opcional**: Keyboard nav, screen reader support, ARIA labels.
+- **Exportação é crítica**: PPTX mantém formatação original + marcações de fonte. PDF preserva leitura.
 
 ---
 

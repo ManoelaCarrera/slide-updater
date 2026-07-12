@@ -1,116 +1,83 @@
-import { useState } from 'react'
-import { Button } from './Button'
+import { useEffect, useState } from 'react'
 import { Card, CardBody, CardHeader } from './Card'
 import { RichTextEditor } from './RichTextEditor'
 import { useProject } from '../context/ProjectContext'
-import { useToast } from './Toast'
-import { LiteraturePanel } from './LiteraturePanel'
-import { DesignSuggestions } from './DesignSuggestions'
-import { searchMultipleSources } from '../services/pubmedService'
-import { extractKeywords, generateDesignSuggestions, analyzeContentLength } from '../utils/helpers'
-import { useDebounce, useDebouncedCallback } from '../hooks/useDebounce'
+import { SuggestionsPanel } from './SuggestionsPanel'
+import { analyzeContentLength, formatDate } from '../utils/helpers'
+import { useDebounce } from '../hooks/useDebounce'
+
+type Tab = 'edit' | 'suggestions' | 'preview' | 'applied'
 
 export function SlideEditor() {
-  const { getCurrentProject, getCurrentSlide, updateSlide, addLiteratureUpdate, addDesignSuggestion, addChangelog } = useProject()
-  const { addToast } = useToast()
-  const [isSearching, setIsSearching] = useState(false)
-  const [activeTab, setActiveTab] = useState<'edit' | 'literature' | 'design' | 'preview'>('edit')
-  const [pendingContent, setPendingContent] = useState<string>('')
+  const { getCurrentProject, getCurrentSlide, updateSlide } = useProject()
+  const [activeTab, setActiveTab] = useState<Tab>('edit')
+  const [pendingContent, setPendingContent] = useState('')
 
   const project = getCurrentProject()
   const slide = getCurrentSlide()
 
-  // Debounce content changes to avoid excessive updates
   const debouncedContent = useDebounce(pendingContent, 500)
+
+  useEffect(() => {
+    setPendingContent(slide?.currentContent || '')
+    setActiveTab('edit')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slide?.id])
+
+  // Sugestões aplicadas (Modo A/B) mudam slide.currentContent de fora do editor —
+  // resincroniza o rascunho local sem trocar de aba nem perder o slide selecionado.
+  useEffect(() => {
+    if (slide) setPendingContent(slide.currentContent || '')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slide?.appliedChanges.length])
+
+  useEffect(() => {
+    if (!project || !slide) return
+    if (debouncedContent !== slide.currentContent) {
+      updateSlide(project.id, slide.id, {
+        currentContent: debouncedContent,
+        keywords: slide.keywords,
+      })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedContent])
 
   if (!project || !slide) {
     return (
-      <div className="flex-1 flex items-center justify-center text-neutral-600">
-        Selecione um slide para começar
+      <div className="flex-1 flex items-center justify-center text-neutral-600 text-center px-8">
+        Selecione um slide na barra lateral, ou crie um novo, para começar a editar.
       </div>
     )
   }
 
-  // Effect: save debounced content to slide
-  React.useEffect(() => {
-    if (debouncedContent !== slide.currentContent && debouncedContent !== '') {
-      updateSlide(project.id, slide.id, {
-        currentContent: debouncedContent,
-        contentLength: analyzeContentLength(debouncedContent).wordCount,
-      })
-    }
-  }, [debouncedContent, project.id, slide.id, slide.currentContent, updateSlide])
-
-  const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const content = e.target.value
-    setPendingContent(content)
-  }
-
-  const handleSearchLiterature = useDebouncedCallback(async () => {
-    setIsSearching(true)
-    try {
-      const keywords = extractKeywords(debouncedContent)
-      if (keywords.length === 0) {
-        addToast('Nenhuma palavra-chave extraída. Adicione mais conteúdo.', 'warning')
-        setIsSearching(false)
-        return
-      }
-
-      const results = await searchMultipleSources(keywords, new Date().getFullYear() - 2)
-
-      if (results.length === 0) {
-        addToast('Nenhum artigo encontrado', 'info')
-      } else {
-        results.forEach(item => addLiteratureUpdate(project.id, slide.id, item))
-        addToast(`${results.length} artigos encontrados!`, 'success')
-        addChangelog(project.id, {
-          action: 'added_literature',
-          slideId: slide.id,
-          details: `Adicionados ${results.length} artigos da literatura`,
-        })
-      }
-    } catch (error) {
-      addToast('Erro ao buscar literatura', 'error')
-      console.error(error)
-    } finally {
-      setIsSearching(false)
-    }
-  }, 1000)
-
-  const handleGenerateDesignSuggestions = () => {
-    const suggestions = generateDesignSuggestions(slide.currentContent, slide.title)
-    suggestions.forEach(s => {
-      addDesignSuggestion(project.id, slide.id, s)
-    })
-    addToast(`${suggestions.length} sugestões de design geradas`, 'success')
-  }
+  const contentStats = analyzeContentLength(slide.currentContent || slide.originalContent)
+  const pendingSuggestions = slide.suggestions.filter(s => s.status === 'pending').length
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
-      {/* Tabs */}
       <div className="border-b border-neutral-200 bg-white px-4 py-2 flex gap-2" role="tablist">
-        {['edit', 'literature', 'design', 'preview'].map(tab => (
+        {(
+          [
+            ['edit', '✏️ Editar'],
+            ['suggestions', `💡 Sugestões${pendingSuggestions > 0 ? ` (${pendingSuggestions})` : ''}`],
+            ['preview', '👁️ Antes / Depois'],
+            ['applied', `🕘 Aplicadas (${slide.appliedChanges.length})`],
+          ] as [Tab, string][]
+        ).map(([tab, label]) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab as any)}
+            onClick={() => setActiveTab(tab)}
             role="tab"
             aria-selected={activeTab === tab}
-            aria-label={`Aba ${tab === 'edit' ? 'Editar' : tab === 'literature' ? 'Literatura' : tab === 'design' ? 'Design' : 'Preview'}`}
             className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-              activeTab === tab
-                ? 'bg-primary-100 text-primary-600 border-b-2 border-primary-600'
-                : 'text-neutral-600 hover:text-neutral-900'
+              activeTab === tab ? 'bg-primary-100 text-primary-600' : 'text-neutral-600 hover:text-neutral-900'
             }`}
           >
-            {tab === 'edit' && '✏️ Editar'}
-            {tab === 'literature' && '📚 Literatura'}
-            {tab === 'design' && '🎨 Design'}
-            {tab === 'preview' && '👁️ Preview'}
+            {label}
           </button>
         ))}
       </div>
 
-      {/* Content */}
       <div className="flex-1 overflow-auto">
         {activeTab === 'edit' && (
           <div className="p-4 space-y-4">
@@ -122,7 +89,7 @@ export function SlideEditor() {
                 id="slide-title"
                 type="text"
                 value={slide.title}
-                onChange={(e) => updateSlide(project.id, slide.id, { title: e.target.value })}
+                onChange={e => updateSlide(project.id, slide.id, { title: e.target.value })}
                 className="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600"
                 aria-label="Título do slide"
               />
@@ -131,56 +98,72 @@ export function SlideEditor() {
             <div>
               <label className="block text-sm font-medium text-neutral-900 mb-2">Conteúdo</label>
               <RichTextEditor
-                value={pendingContent || slide.currentContent}
-                onChange={handleContentChange}
-                placeholder="Cole ou digite o conteúdo do slide..."
+                key={`${slide.id}-${slide.appliedChanges.length}`}
+                value={pendingContent}
+                onChange={setPendingContent}
+                placeholder="Cole ou digite o conteúdo do slide…"
               />
-            </div>
-
-            <div className="flex gap-2">
-              <Button
-                variant="primary"
-                onClick={handleSearchLiterature}
-                isLoading={isSearching}
-                aria-label="Buscar literatura relacionada ao conteúdo do slide"
-              >
-                🔍 Buscar Literatura
-              </Button>
-              <Button
-                variant="secondary"
-                onClick={handleGenerateDesignSuggestions}
-                aria-label="Gerar sugestões de design para o slide"
-              >
-                ✨ Sugestões de Design
-              </Button>
+              <p className="text-xs text-neutral-600 mt-2">
+                {contentStats.wordCount} palavras
+                {contentStats.isTextHeavy && ' · slide com bastante texto, considere resumir para a aula'}
+              </p>
             </div>
           </div>
         )}
 
-        {activeTab === 'literature' && (
-          <LiteraturePanel slide={slide} project={project} />
-        )}
-
-        {activeTab === 'design' && (
-          <DesignSuggestions slide={slide} project={project} />
-        )}
+        {activeTab === 'suggestions' && <SuggestionsPanel project={project} slide={slide} />}
 
         {activeTab === 'preview' && (
-          <div className="p-4">
+          <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
-                <h2 className="text-2xl font-bold">{slide.title}</h2>
+                <h3 className="font-semibold text-neutral-900">Antes (conteúdo original)</h3>
               </CardHeader>
               <CardBody>
-                <div className="prose max-w-none">
-                  {slide.currentContent.split('\n').map((para, i) => (
-                    <p key={i} className="mb-3 text-neutral-900">
-                      {para}
-                    </p>
-                  ))}
+                <div className="prose prose-sm max-w-none text-neutral-800 whitespace-pre-wrap">
+                  {slide.originalContent || '(vazio)'}
                 </div>
               </CardBody>
             </Card>
+            <Card>
+              <CardHeader>
+                <h3 className="font-semibold text-neutral-900">Depois (conteúdo atual)</h3>
+              </CardHeader>
+              <CardBody>
+                <div
+                  className="prose prose-sm max-w-none text-neutral-800"
+                  dangerouslySetInnerHTML={{ __html: slide.currentContent || '(vazio)' }}
+                />
+              </CardBody>
+            </Card>
+          </div>
+        )}
+
+        {activeTab === 'applied' && (
+          <div className="p-4 space-y-2">
+            {slide.appliedChanges.length === 0 ? (
+              <div className="p-4 bg-neutral-50 rounded-lg border border-neutral-200 text-center text-sm text-neutral-600">
+                Nenhuma sugestão aplicada ainda neste slide.
+              </div>
+            ) : (
+              slide.appliedChanges
+                .slice()
+                .reverse()
+                .map(change => {
+                  const source = project.sources.find(s => s.id === change.sourceId)
+                  return (
+                    <Card key={change.id}>
+                      <CardBody>
+                        <div className="flex justify-between text-xs text-neutral-600 mb-2">
+                          <span>{source?.name || 'Fonte removida'}</span>
+                          <span>{formatDate(change.timestamp)}</span>
+                        </div>
+                        <p className="text-sm text-neutral-800">{change.insertedText}</p>
+                      </CardBody>
+                    </Card>
+                  )
+                })
+            )}
           </div>
         )}
       </div>

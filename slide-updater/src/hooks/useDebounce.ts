@@ -53,8 +53,8 @@ export function useDebounce<T>(value: T, delay: number = 300): T {
  * Hook: debounce a callback function (fire callback after delay).
  *
  * @example
- * const debouncedSearch = useDebouncedCallback(
- *   (keywords) => searchPubMed(keywords),
+ * const debouncedAnalyze = useDebouncedCallback(
+ *   (slideId) => analyzeSlideAgainstSources(slideId),
  *   1000
  * )
  *

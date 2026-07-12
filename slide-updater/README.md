@@ -1,198 +1,138 @@
-# Slide Updater — Atualização de Aulas com Literatura Científica
+# Slide Updater v2.0 — Atualização de Slides com Literatura Científica
 
-Uma aplicação web que permite docentes atualizar slides de aulas automaticamente com literatura científica recente do PubMed, Scopus e Web of Science.
+Aplicativo para a Profa (Estomatologia / Odontologia Oncológica) atualizar
+slides de aula com base em literatura que ela mesma carrega — sem nenhuma
+integração com PubMed, Scopus, Web of Science ou qualquer outra API externa.
+Tudo roda localmente, no navegador: upload de fontes, extração de texto,
+busca e geração de sugestões, edição e exportação.
 
-## ✨ Recursos
+## O que mudou da v1.0 para a v2.0
 
-- **Importar Slides**: Drag-and-drop de arquivos PDF, PPTX ou TXT
-- **Buscar Literatura**: Integração com PubMed, Scopus e Web of Science
-- **Sugestões Automáticas**: Propostas de atualização de conteúdo e design
-- **Armazenamento Local**: Tudo salvo em localStorage — sem backend
-- **Exportação**: PDF, PPTX, HTML ou JSON backup
-- **Zero Setup**: Não requer instalação ou conta de usuário
+A v1.0 assumia buscas automáticas em bases como PubMed/Scopus. Essa
+abordagem foi abandonada: exigia credenciais, dependia de disponibilidade de
+serviços de terceiros e não dava controle real sobre a qualidade das fontes.
+Na v2.0, a Profa baixa e carrega ela mesma os PDFs/artigos/imagens que quer
+usar como referência, e o app faz busca textual local nesse material.
 
-## 🚀 Quick Start
+## Recursos
+
+- **Projetos** por disciplina (Estomatologia 1/2, Patologia Básica, Pós-graduação)
+- **Fontes de referência**: upload de PDF (extração de texto via pdf.js),
+  imagem (screenshot de livro digital), .txt e .md — tudo processado no
+  navegador
+- **Aula base**: importação de tópicos em .txt/.md (uma linha = um slide) ou
+  criação manual de slides
+- **Análise & Sugestões**: busca local por palavras-chave do slide nas fontes
+  carregadas, com três tipos de sugestão — nova referência, dado possivelmente
+  desatualizado, gap pedagógico — sempre citando o trecho literal da fonte
+- **Dois modos de validação**: passo-a-passo (aprova/rejeita/edita uma
+  sugestão por vez) ou revisão final (marca várias e aplica em lote)
+- **Undo/Redo** (últimas 20 ações) e linha do tempo do projeto
+- **Exportação**: PPTX (com o design system e marcação de fontes), PDF e
+  backup/restauração em JSON
+- **Zero rede**: nenhuma chamada HTTP para serviços externos, nenhuma chave
+  de API — nem da Profa, nem de ninguém
+
+## Regra de ouro: voz pedagógica preservada
+
+As sugestões do app **complementam, não substituem** o raciocínio já
+proposto no slide. Elas nunca entregam uma resposta pronta no lugar de uma
+pergunta socrática — trazem um trecho literal extraído da fonte carregada,
+com uma explicação de por que pode ser útil, e é a Profa quem decide se e
+como incorporar.
+
+## Quick Start
 
 ### Requisitos
-- Node.js 16+ e npm
-
-### Setup Local
+- Node.js 18+ e npm
 
 ```bash
-# Clonar e instalar
-git clone <repo>
 cd slide-updater
 npm install
-
-# Iniciar servidor de desenvolvimento
-npm run dev
-
-# Abrir em http://localhost:5173
+npm run dev       # http://localhost:5173
 ```
 
-### Build para Produção
+### Build de produção
 
 ```bash
-npm run build
-
-# Servir versão otimizada
-npm preview
+npm run build      # gera dist/
+npm run preview    # serve o build localmente
 ```
 
-## 📖 Como Usar
+## Como usar
 
-### 1. Criar um Projeto
-Clique em "+ Novo Projeto" na navbar e dê um nome (ex: "Biologia 101 - 2026").
+### 1. Criar um projeto
+"+ Novo Projeto" na navbar → nome + disciplina.
 
-### 2. Importar Slides
-Clique em "📤 Importar Slides" e:
-- **Arraste** arquivos PDF, PPTX ou TXT, ou
-- **Clique** para selecionar do seu computador
+### 2. Carregar a aula base
+"📤 Importar Aula Base" para subir um .txt/.md com um tópico por linha, ou
+use "+ Slide" na barra lateral para criar slides manualmente.
 
-Cada linha (TXT) ou página (PDF/PPTX) vira um slide.
+### 3. Carregar fontes
+"📚 Adicionar Fontes" → arraste PDFs, imagens, .txt ou .md. Cada fonte fica
+listada na aba "Fontes" da barra lateral, com preview do texto extraído (ou
+da imagem).
 
-### 3. Editar Conteúdo
-- Selecione um slide na sidebar
-- Aba "✏️ Editar": adicione ou corrija conteúdo
-- O app calcula automaticamente palavras-chave
+### 4. Analisar e revisar sugestões
+No slide selecionado, aba "💡 Sugestões" → "Analisar Este Slide". O app
+extrai palavras-chave do conteúdo e procura ocorrências nas fontes. Escolha
+o modo de validação (passo-a-passo ou revisão final) em Configurações ou
+direto no painel de sugestões.
 
-### 4. Buscar Literatura
-- Clique em "🔍 Buscar Literatura"
-- O app busca nos últimos 2 anos de PubMed, Scopus, WoS
-- Revise e aprove artigos relevantes
-- Clique "+ Inserir" para adicionar ao slide
+### 5. Exportar
+Botão "💾 Exportar": PPTX (mantém o design system e lista as fontes usadas em
+cada slide), PDF, ou backup/restauração em JSON.
 
-### 5. Sugestões de Design
-- Clique em "✨ Sugestões de Design"
-- O app detecta: slides com muito texto, falta de visuais, etc.
-- Revise e aplique sugestões
-
-### 6. Exportar
-Clique em "💾 Exportar":
-- **HTML**: Para compartilhar online
-- **PPTX**: Para editar em PowerPoint
-- **JSON**: Backup completo para reimportar
-
-## 🏗️ Arquitetura
+## Arquitetura
 
 ```
 src/
-├── components/       # Componentes React (Button, Card, Navbar, etc.)
-├── context/         # Context API para state global
-├── hooks/           # Custom hooks (useLocalStorage)
-├── services/        # API integrations (pubmedService)
-├── utils/           # Funções auxiliares (helpers)
-├── types.ts         # Tipos TypeScript compartilhados
-├── App.tsx          # App principal
-└── index.css        # Estilos globais Tailwind
+├── components/         # UI (Sidebar, SourceManager, SuggestionsPanel, SlideEditor, ExportPanel, ...)
+├── context/             # ProjectContext (estado global + localStorage + undo/redo)
+├── hooks/                # useLocalStorage, useDebounce, useRichText
+├── services/            # pdfService (pdf.js), sourceService, fileParserService, exportService
+├── utils/                # keywordExtractor (TF-IDF), textSearch (busca local + sugestões), helpers
+├── types.ts              # Modelo de dados (Project, Source, Slide, Suggestion, ...)
+└── App.tsx
 ```
 
-## 🔗 APIs Externas
+## O que funciona e o que não dá
 
-### PubMed (Gratuito)
-- Sem autenticação necessária
-- Rate limit: 1 req/seg
-- Busca por keyword + year
+- ✅ Roda 100% offline depois do build — sem servidor, sem API, sem chave
+- ✅ Upload e extração de texto de PDF, imagem, .txt, .md
+- ✅ Busca textual local + sugestões com trecho literal da fonte
+- ✅ Exportação PPTX/PDF/JSON funcionando de ponta a ponta
+- ⚠️ PDFs escaneados como imagem (sem camada de texto) não têm OCR — o app
+  avisa quando não consegue extrair texto
+- ⚠️ Importação automática de PPTX existente ainda não é suportada — os
+  slides precisam ser criados manualmente (a exportação para PPTX funciona
+  normalmente)
+- ⚠️ Dados ficam no `localStorage` do navegador/dispositivo — sem
+  sincronização entre computadores; use o backup JSON para levar um projeto
+  de um lugar para outro
 
-### Scopus (Opcional)
-- Requer API key (gratuita para acadêmicos)
-- Fallback automático se não houver chave
+## Armazenamento
 
-### Web of Science (Opcional)
-- Requer credenciais
-- Fallback automático se não houver acesso
+Tudo salvo em `localStorage` sob a chave `slideUpdater_appState` (mais pilhas
+de undo/redo). A aba Configurações mostra o tamanho aproximado do projeto
+atual; se ficar grande (muitas imagens, por exemplo), baixe um backup JSON e
+considere remover fontes que não estão mais em uso.
 
-## 💾 Armazenamento
+## Privacidade
 
-Tudo é salvo em `localStorage` sob a chave `slideUpdater_appState`:
-- Projetos ilimitados
-- Espaço: até ~5-10MB (compactado com gzip)
-- Persistência automática a cada mudança
-- Backup JSON disponível para safekeeping
+- Zero rastreamento, zero analytics
+- Nenhuma chamada de rede — nem para PubMed/Scopus/WoS, nem para nenhum outro
+  serviço
+- Todos os arquivos carregados (PDF, imagem, texto) ficam só no navegador da
+  Profa
 
-## ⌨️ Atalhos de Teclado
+## Design System
 
-- `Ctrl/Cmd + S`: Salvar (automático)
-- `Tab`: Navegar entre abas
-- `Esc`: Fechar modais
-
-## 🐛 Troubleshooting
-
-**"Nenhum artigo encontrado"**
-- Adicione mais conteúdo ao slide
-- Palavras-chave muito gerais? Use termos específicos
-
-**"Erro ao conectar ao PubMed"**
-- Verifique sua conexão de internet
-- O PubMed pode estar temporariamente indisponível
-
-**"Dados desapareceram"**
-- Limpar localStorage apaga tudo! Use "💾 Backup JSON" regularmente
-- `localStorage.clear()` no console vai deletar tudo
-
-**PPTX não gera**
-- Fallback: exporte como HTML ou JSON
-
-## 📋 Dados Estrutura
-
-Cada projeto contém:
-```json
-{
-  "id": "uuid",
-  "name": "Projeto",
-  "slides": [
-    {
-      "id": "slide-id",
-      "title": "Título",
-      "originalContent": "...",
-      "currentContent": "...",
-      "literatureUpdates": [
-        {
-          "source": "pubmed",
-          "title": "...",
-          "authors": "...",
-          "year": 2024,
-          "approved": true
-        }
-      ]
-    }
-  ]
-}
-```
-
-## 🎨 Design System
-
-A UI segue um design system acadêmico:
-- **Cores**: Marrom terracota (#c17847) + neutros + azul
-- **Tipografia**: System fonts (-apple-system, Sora)
-- **Componentes**: Button, Card, Modal, Toast, Input
-- **Responsividade**: Desktop 1280px+, Tablet 768px+, Mobile 375px+
-
-## 🔐 Privacidade
-
-- ✅ **Zero rastreamento**: Nenhum analytics
-- ✅ **Sem servidor**: Tudo local
-- ✅ **Dados seus**: localStorage só você acessa
-- ✅ **Open source**: Código transparente
-
-## 🤝 Contribuições
-
-Bugs encontrados? Features para sugerir?
-- Abra uma issue no GitHub
-- Faça um fork e PR com melhorias
-
-## 📄 Licença
-
-MIT — Use livremente em produção
-
-## 🙋 Suporte
-
-- Documentação: Veja README
-- API Docs: Inline comments no código
-- Issues: GitHub (links acima)
+- Cores: terracota `#c17847` (primária), marrom escuro `#2c2416` (neutro
+  900), bege `#faf8f5` (fundo)
+- Tipografia: fontes do sistema
+- Componentes: Button, Card, Toast, Modal — ver `src/components/`
 
 ---
 
-**Versão 0.1.0** — Pronto para produção ✨
-
-Desenvolvido com ❤️ por Arquiteto de Apps (Claude Code)
+**v2.0.0**

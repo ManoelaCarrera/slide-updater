@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRichText } from '../hooks/useRichText'
 import { Button } from './Button'
 
@@ -12,28 +12,51 @@ interface RichTextEditorProps {
 export function RichTextEditor({
   value,
   onChange,
-  placeholder = 'Digite ou cole o conteúdo do slide...',
+  placeholder = 'Digite ou cole o conteúdo do slide…',
   disabled = false,
 }: RichTextEditorProps) {
   const richText = useRichText(value)
   const [showLinkInput, setShowLinkInput] = useState(false)
   const [linkUrl, setLinkUrl] = useState('')
-  const [selectedHeading, setSelectedHeading] = useState<'h1' | 'h2' | 'h3' | 'h4'>('h2')
+  const [selectedHeading, setSelectedHeading] = useState<'h2' | 'h3' | 'h4'>('h2')
+  // Guarda o último valor que este editor emitiu via onChange, para distinguir
+  // "o pai ecoou de volta o que acabei de digitar" de uma mudança externa real
+  // (undo/redo, sugestão aplicada, troca de projeto sem remount do componente).
+  const lastEmittedRef = useRef(value)
 
-  // Initialize editor with initial value
+  // Inicializa o editor com o valor inicial (uma vez, por instância/key)
   useEffect(() => {
     if (richText.editorRef.current && value && richText.editorRef.current.innerHTML !== value) {
       richText.editorRef.current.innerHTML = value
     }
+    lastEmittedRef.current = value
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Propagate changes to parent
+  // Ressincroniza o DOM quando `value` muda por fora (undo/redo, sugestão
+  // aplicada) sem passar pelo próprio onChange deste editor — sem isso o
+  // editor fica com HTML desatualizado e a próxima tecla digitada sobrescreve
+  // o conteúdo real salvo no projeto.
   useEffect(() => {
-    if (richText.isDirty) {
-      onChange(richText.getHtml())
+    if (value === lastEmittedRef.current) return
+    lastEmittedRef.current = value
+    if (richText.editorRef.current && richText.editorRef.current.innerHTML !== value) {
+      richText.editorRef.current.innerHTML = value
       richText.clearDirtyFlag()
     }
-  }, [richText.isDirty, richText, onChange])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value])
+
+  // Propaga mudanças para o componente pai
+  useEffect(() => {
+    if (richText.isDirty) {
+      const html = richText.getHtml()
+      lastEmittedRef.current = html
+      onChange(html)
+      richText.clearDirtyFlag()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [richText.isDirty])
 
   const handleInsertLink = () => {
     if (linkUrl.trim()) {
@@ -44,59 +67,29 @@ export function RichTextEditor({
   }
 
   const handleHeadingChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const level = e.target.value as 'h1' | 'h2' | 'h3' | 'h4'
+    const level = e.target.value as 'h2' | 'h3' | 'h4'
     setSelectedHeading(level)
     richText.formatHeading(level)
   }
 
   return (
     <div className="flex flex-col gap-3 border border-neutral-200 rounded-lg overflow-hidden bg-white">
-      {/* Toolbar */}
       <div className="bg-neutral-50 border-b border-neutral-200 p-3 flex flex-wrap gap-1 items-center">
-        {/* Text formatting */}
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={richText.toggleBold}
-          title="Bold (Ctrl+B)"
-          aria-label="Aplicar negrito"
-        >
+        <Button size="sm" variant="ghost" onClick={richText.toggleBold} title="Negrito (Ctrl+B)" aria-label="Aplicar negrito">
           <strong>B</strong>
         </Button>
-
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={richText.toggleItalic}
-          title="Italic (Ctrl+I)"
-          aria-label="Aplicar itálico"
-        >
+        <Button size="sm" variant="ghost" onClick={richText.toggleItalic} title="Itálico (Ctrl+I)" aria-label="Aplicar itálico">
           <em>I</em>
         </Button>
-
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={richText.toggleUnderline}
-          title="Underline (Ctrl+U)"
-          aria-label="Aplicar sublinhado"
-        >
+        <Button size="sm" variant="ghost" onClick={richText.toggleUnderline} title="Sublinhado (Ctrl+U)" aria-label="Aplicar sublinhado">
           <u>U</u>
         </Button>
-
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={richText.toggleCode}
-          title="Code"
-          aria-label="Aplicar formatação de código"
-        >
+        <Button size="sm" variant="ghost" onClick={richText.toggleCode} title="Código" aria-label="Aplicar formatação de código">
           &lt;/&gt;
         </Button>
 
         <div className="w-px h-6 bg-neutral-300" />
 
-        {/* Headings */}
         <select
           value={selectedHeading}
           onChange={handleHeadingChange}
@@ -111,84 +104,42 @@ export function RichTextEditor({
 
         <div className="w-px h-6 bg-neutral-300" />
 
-        {/* Lists */}
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={richText.insertBulletList}
-          title="Bullet list"
-          aria-label="Inserir lista com pontos"
-        >
+        <Button size="sm" variant="ghost" onClick={richText.insertBulletList} title="Lista com pontos" aria-label="Inserir lista com pontos">
           • Lista
         </Button>
-
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={richText.insertNumberedList}
-          title="Numbered list"
-          aria-label="Inserir lista numerada"
-        >
+        <Button size="sm" variant="ghost" onClick={richText.insertNumberedList} title="Lista numerada" aria-label="Inserir lista numerada">
           1. Lista
         </Button>
 
         <div className="w-px h-6 bg-neutral-300" />
 
-        {/* Link & Quote */}
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={() => setShowLinkInput(!showLinkInput)}
-          title="Insert link"
-          aria-label="Inserir link"
-        >
+        <Button size="sm" variant="ghost" onClick={() => setShowLinkInput(!showLinkInput)} title="Inserir link" aria-label="Inserir link">
           🔗 Link
         </Button>
-
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={richText.insertQuote}
-          title="Quote"
-          aria-label="Inserir citação"
-        >
+        <Button size="sm" variant="ghost" onClick={richText.insertQuote} title="Citação" aria-label="Inserir citação">
           " Citação
         </Button>
 
         <div className="w-px h-6 bg-neutral-300" />
 
-        {/* Clear formatting */}
-        <Button
-          size="sm"
-          variant="ghost"
-          onClick={richText.clearFormatting}
-          title="Clear formatting"
-          aria-label="Remover formatação"
-        >
+        <Button size="sm" variant="ghost" onClick={richText.clearFormatting} title="Limpar formatação" aria-label="Remover formatação">
           ✖️ Limpar
         </Button>
       </div>
 
-      {/* Link input (conditional) */}
       {showLinkInput && (
         <div className="bg-blue-50 border-b border-blue-200 px-3 py-2 flex gap-2 items-center">
           <input
             type="text"
-            placeholder="Cole a URL..."
+            placeholder="Cole a URL…"
             value={linkUrl}
-            onChange={(e) => setLinkUrl(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && handleInsertLink()}
+            onChange={e => setLinkUrl(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && handleInsertLink()}
             className="flex-1 px-2 py-1 border border-blue-300 rounded text-sm"
             aria-label="URL do link"
             disabled={disabled}
           />
-          <Button
-            size="sm"
-            variant="primary"
-            onClick={handleInsertLink}
-            aria-label="Confirmar inserção de link"
-            disabled={disabled}
-          >
+          <Button size="sm" variant="primary" onClick={handleInsertLink} aria-label="Confirmar inserção de link" disabled={disabled}>
             OK
           </Button>
           <Button
@@ -205,7 +156,6 @@ export function RichTextEditor({
         </div>
       )}
 
-      {/* Editor */}
       <div
         ref={richText.editorRef}
         contentEditable={!disabled}
@@ -221,7 +171,6 @@ export function RichTextEditor({
         aria-disabled={disabled}
       />
 
-      {/* Character count */}
       <div className="bg-neutral-50 border-t border-neutral-200 px-3 py-2 text-xs text-neutral-600 flex justify-between">
         <span>{richText.getHtml().replace(/<[^>]*>/g, '').length} caracteres</span>
         <span>{richText.getHtml().replace(/<[^>]*>/g, '').split(/\s+/).filter(w => w).length} palavras</span>
