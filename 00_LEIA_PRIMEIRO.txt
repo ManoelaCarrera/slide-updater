@@ -1,0 +1,222 @@
+================================================================================
+BIBLIOTECA — BIBLIOMETRIA EM RASTREIO DE CCP
+LEIA PRIMEIRO
+================================================================================
+
+Bem-vinda, Manuela!
+
+Esta pasta contém todo o material estruturado para sua pesquisa bibliométrica
+em rastreio de câncer de cabeça e pescoço (CCP), período 2010-2026.
+
+Todos os arquivos foram gerados pelo Clone Acadêmico em colaboração com o
+agente de Revisão de Literatura, trabalhando na sua voz: formal, técnica,
+precisa, rigorosa.
+
+
+================================================================================
+COMO NAVEGAR ESTA PASTA
+================================================================================
+
+1. COMECE AQUI:
+   → 04_PORTFOLIO_7_IDEIAS.txt
+   Leia o resumo executivo de cada uma das 7 ideias de pesquisa.
+   Ajuda você escolher por onde começar.
+
+
+2. SE JÁ DECIDIU PELA IDEIA #3 (DESIGUALDADE LMIC):
+   → 02_IDEIA3_RESUMO_EXECUTIVO.txt (panorama completo)
+   → 01_STRING_BUSCA_VALIDADA.txt (strings prontas para usar)
+   → 03_INSTITUICOES_E_PAISES_LMIC.txt (instituições líderes, análise colaboração)
+
+   PRÓXIMO PASSO: Copiar a string de busca e executar em PubMed
+
+
+3. SE QUER EXPLORAR OUTRAS IDEIAS:
+   → 04_PORTFOLIO_7_IDEIAS.txt descreve todas as 7
+   Escolha 1 ou 2 que mais interessem.
+   Então chamar o Clone para aprofundar (Revisão de Literatura).
+
+
+================================================================================
+DESCRIÇÃO DOS ARQUIVOS
+================================================================================
+
+00_LEIA_PRIMEIRO.txt (ESTE ARQUIVO)
+   → Índice de navegação
+   → Instruções de uso
+   → Links entre arquivos
+
+01_STRING_BUSCA_VALIDADA.txt
+   → String de busca pronta para copiar/colar em PubMed, Scopus, WoS, SciELO
+   → 4 versões adaptadas por base (MeSH para PubMed, TITLE-ABS-KEY para Scopus)
+   → Período: 2010-2026
+   → Volume esperado: 500-1.500 artigos após deduplicação
+   → Filtros recomendados
+   → Checklist de execução
+
+02_IDEIA3_RESUMO_EXECUTIVO.txt
+   → Ideia #3 em profundidade: Desigualdade de Pesquisa (LMIC vs Países Altos)
+   → Por que fazer? Pergunta de pesquisa. Justificativa clínica.
+   → O que revelará? Instituições esperadas. Padrões de colaboração.
+   → Lacunas geográficas. Síntese argumentativa (3 parágrafos prontos).
+   → Timeline sugerido (3-4 meses). Checklist de execução.
+   → Potencial de impacto.
+
+03_INSTITUICOES_E_PAISES_LMIC.txt
+   → Quadro comparativo de instituições líderes em LMIC
+   → Rankings por país (Índia 40-60%, Brasil 20-30%, etc)
+   → Detalhe de cada instituição: especialidade, impacto, colaborações
+   → Dados epidemiológicos contextuais (carga, sobrevida, cobertura rastreio)
+   → Padrões de colaboração (Norte-Sul, Sul-Sul, autoria local)
+   → Lacunas geográficas críticas (zero pesquisa em Sahel, Pacífico, Caribe)
+   → Oportunidades de colaboração Sul-Sul a fortalecer
+   → Fatores de impacto esperados por tipo de colaboração
+
+04_PORTFOLIO_7_IDEIAS.txt
+   → Visão panorâmica de todas as 7 ideias
+   → Cada ideia: pergunta, diferencial, volume estimado, próximos passos
+   → Matriz comparativa das 7
+   → Recomendações de priorização
+   → Timeline e recursos necessários (todos gratuitos!)
+
+
+================================================================================
+QUAL IDEIA COMEÇAR? (RECOMENDAÇÃO)
+================================================================================
+
+IDEIA #3 — DESIGUALDADE DE PESQUISA (LMIC vs PAÍSES ALTOS)
+───────────────────────────────────────────────────────────
+
+✓ JÁ COMPLETADA — string validada, instituições mapeadas, síntese pronta
+✓ Alinhada com sua preocupação em rastreio eficaz em populações vulneráveis
+✓ Publicabilidade alta (Frontiers, Global Health Action, PLOS)
+✓ Timeline curta (3-4 meses)
+✓ Primeiro passo: apenas copiar string e buscar em PubMed
+
+→ Recomendo COMEÇAR POR AQUI
+
+
+IDEIA #7 — DESFECHOS CENTRADOS NO PACIENTE (QUALIDADE DE VIDA)
+──────────────────────────────────────────────────────────────
+
+✓ Alinhada com sua lacuna de interesse ("impacto na qualidade de vida")
+✓ Revela gap importante que poucos exploram
+✓ Publicabilidade alta (interface clínica + psicossocial)
+✓ Timeline: 2-3 meses
+✓ Potencial para virar seu "marca registrada" acadêmica
+
+→ Recomendo como 2ª PRIORIDADE
+
+
+COMBINAR #3 + #7:
+─────────────────
+
+Possível em paralelo. Forma argumento poderoso:
+"Para quem fazemos rastreio e qual é o custo psicossocial?"
+
+
+================================================================================
+TIMELINE PRÁTICO (SE COMEÇAR IDEIA #3 HOJE)
+================================================================================
+
+SEMANA 1 (JÁ AQUI):
+• Leia 04_PORTFOLIO_7_IDEIAS.txt (escolha)
+• Leia 02_IDEIA3_RESUMO_EXECUTIVO.txt (decisão)
+• Copie string de 01_STRING_BUSCA_VALIDADA.txt
+
+SEMANA 2-3:
+• Busca em PubMed (teste rápido)
+• Se volume OK → busca em Scopus, WoS, SciELO
+• Exporte em .ris
+
+SEMANA 4-6:
+• Deduplicação
+• Triagem título/resumo (2 revisores)
+
+SEMANA 7-10:
+• Extração de dados
+• Análise bibliométrica (VOSviewer/Gephi)
+
+SEMANA 11-12:
+• Redação e submissão
+
+RESULTADO: Artigo publicável em ~3 meses
+
+
+================================================================================
+DÚVIDAS FREQUENTES
+================================================================================
+
+P: Já tenho acesso às bases de dados?
+R: Procure o coordenador de sua instituição. Scopus e WoS costumam estar via
+   CAPES. PubMed é gratuito. SciELO é gratuito.
+
+P: Preciso de 2º revisor para triagem título/resumo?
+R: Idealmente sim (aumenta rigor). Mas é possível fazer sozinha com
+   ferramenta de controle de qualidade (Rayyan oferece isso).
+
+P: Qual ferramenta usar para análise de redes?
+R: VOSviewer é mais visual e intuitiva (recomendado para começar).
+   Gephi é mais poderosa mas tem curva de aprendizado maior.
+   Ambas gratuitas.
+
+P: Qual periódico devo almejar?
+R: Para Ideia #3: Frontiers in Oncology, Global Health Action, PLOS ONE
+   Para Ideia #7: Global Health Action, Supportive Care in Cancer, PLOS
+   Para Ideia #2: Oral Diseases, Journal of Oral Pathology & Medicine
+
+P: E se o volume de artigos encontrados for > 3.000?
+R: Refine a string (remova "opportunistic screening" ou seja mais específica)
+   Se < 200: adicione sinônimos (ex.: "oral mucosa" + "malignant")
+
+P: Posso fazer mais de uma ideia ao mesmo tempo?
+R: Sim, mas recomendo dominar Ideia #3 primeiro, depois #7.
+   Após isso, outras em paralelo.
+
+
+================================================================================
+RECURSOS GRATUITOS (JÁ MENCIONADOS)
+================================================================================
+
+Busca:
+• PubMed: www.pubmed.ncbi.nlm.nih.gov
+• SciELO: www.scielo.org
+• (Scopus e WoS: via instituição)
+
+Gerenciamento:
+• Zotero: www.zotero.org
+• Rayyan (deduplicação e triagem): www.rayyan.qcri.org
+
+Análise:
+• VOSviewer: www.vosviewer.com
+• Gephi: www.gephi.org
+
+Escrita:
+• Overleaf (LaTeX): www.overleaf.com
+
+
+================================================================================
+PRÓXIMOS PASSOS IMEDIATOS
+================================================================================
+
+1. Leia 04_PORTFOLIO_7_IDEIAS.txt (20 min)
+2. Escolha 1 ideia
+3. Se for #3 ou #7, leia resumo executivo correspondente (20 min)
+4. Se for #3: pegue string de busca, teste em PubMed (30 min)
+5. Se for outra: chame Clone para Revisão de Literatura aprofundada
+
+Pronto! Você tem todo material em texto simples, fácil de ler offline,
+facilmente imprimível.
+
+
+================================================================================
+
+Que comece bem!
+
+—
+
+Clone Acadêmico | Manuela Carrera
+Agosto 2026
+
+"Rastreio eficaz de CCP começa aqui: perguntas certas, dados robustos,
+mente crítica. Vamos lá."

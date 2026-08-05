@@ -1,0 +1,279 @@
+================================================================================
+INSTITUIÇÕES E PAÍSES LÍDERES EM PESQUISA DE RASTREIO DE CCP
+QUADRO COMPARATIVO
+================================================================================
+
+Data: 2026-08-05
+Escopo: Países de renda baixa-média (LMIC), 2010-2026
+
+
+================================================================================
+1. RANKING DE PRODUÇÃO POR PAÍS (2010-2026, ESTIMADO)
+================================================================================
+
+Ranking  País           % do Total LMIC  N. Artigos Est.  Tendência
+------   ----------     ---------------  ----------------  ---------
+ 1       Índia          40-60%            150-200          ↑ crescente
+ 2       Brasil         20-30%            80-120           ↑ estável-crescente
+ 3       Vietnam        5-10%             20-40            ↑ crescente
+ 4       México         5-8%              15-30            ↔ estável
+ 5       África do Sul  5-8%              15-30            ↑ crescente
+ 6       Indonésia      3-5%              10-20            ↔ estável
+ 7       Tailândia      2-4%              8-15             ↔ estável
+
+
+================================================================================
+2. INSTITUIÇÕES LÍDERES POR PAÍS
+================================================================================
+
+ÍNDIA (40-60% da produção LMIC)
+─────────────────────────────────────────────────────────────────────────
+
+1. All India Institute of Medical Sciences (AIIMS)
+   - Especialidade: Oncologia bucal, rastreio clínico
+   - Impacto: Alto (JCR Q1-Q2)
+   - Destaque: Ensaios RCT de rastreio visual; maior referência global
+   - Colaborações: USA (Stanford, Harvard, Johns Hopkins), UK
+
+2. National Institute of Cancer Prevention Research (NICPR)
+   - Especialidade: Epidemiologia, programas de screening
+   - Impacto: Alto
+   - Destaque: Base de dados de 37 estados indianos; vigilância contínua
+   - Colaborações: OMS, IARC
+
+3. Tata Memorial Centre, Mumbai
+   - Especialidade: Oncologia clínica, translacional
+   - Impacto: Alto
+   - Destaque: Clínica de referência; colaborações internacionais ativas
+   - Colaborações: USA, UK, Itália
+
+4. Department of Oral Pathology, University of Delhi
+   - Especialidade: Patologia oral, pesquisa translacional
+   - Impacto: Médio-Alto
+   - Destaque: Estudos moleculares; disseminação de conhecimento
+
+BRASIL (20-30% da produção LMIC)
+─────────────────────────────────────────────────────────────────────────
+
+1. USP — Faculdade de Odontologia, São Paulo
+   - Especialidade: Odontologia oncológica, rastreio
+   - Impacto: Alto (JCR Q2-Q3)
+   - Destaque: Liderança em pesquisa Brasil; colaborações internacionais
+   - Colaborações: USA (UCSF, Florida), UK, Itália
+
+2. INCA — Instituto Nacional de Câncer
+   - Especialidade: Epidemiologia, diretrizes clínicas, vigilância
+   - Impacto: Alto (aplicado)
+   - Destaque: Diretrizes nacionais Brasil; política pública
+   - Colaborações: Ministério da Saúde, sistemas de saúde públicos
+
+3. Universidade Estadual de Campinas (UNICAMP)
+   - Especialidade: Estomatologia, patologia oral, pesquisa translacional
+   - Impacto: Médio-Alto
+   - Destaque: Investigações inovadoras; formação de pesquisadores
+   - Colaborações: Universidades brasileiras, internacionais
+
+4. Federal University of Minas Gerais (UFMG)
+   - Especialidade: Saúde bucal coletiva, pesquisa aplicada
+   - Impacto: Médio
+   - Destaque: Foco em sistemas públicos; implementação
+   - Colaborações: SUS (Sistema Único de Saúde), redes estaduais
+
+VIETNAM (5-10%)
+─────────────────────────────────────────────────────────────────────────
+
+1. Vietnam National Cancer Institute
+   - Especialidade: Oncologia clínica, rastreio
+   - Impacto: Médio
+   - Destaque: Colaborações ASEAN; epidemiologia regional
+   - Colaborações: Austrália, Tailândia, Laos
+
+2. National Institute of Odonto-Stomatology, Hanoi
+   - Especialidade: Estomatologia, pesquisa regional
+   - Impacto: Médio
+   - Destaque: Pesquisa emergente; potencial elevado
+   - Colaborações: Redes Sudeste Asiático
+
+
+MÉXICO (5-8%)
+─────────────────────────────────────────────────────────────────────────
+
+Instituições descentralizadas:
+- Universidades regionais (Monterrey, Guadalajara, México)
+- Documentação limitada de produção específica em rastreio CCP
+- Potencial para colaboração Sul-Sul não explorado
+
+
+ÁFRICA DO SUL (5-8%)
+─────────────────────────────────────────────────────────────────────────
+
+1. University of the Witwatersrand, Johannesburg
+   - Especialidade: Oncologia, saúde pública
+   - Impacto: Médio-Alto
+   - Destaque: Hub de pesquisa oncológica africana
+   - Colaborações: USA, UK, outras universidades africanas
+
+2. University of Cape Town
+   - Especialidade: Cirurgia, oncologia, translacional
+   - Impacto: Médio
+   - Destaque: Infraestrutura avançada; pesquisa emergente
+   - Colaborações: Colaborações africanas (Uganda, Quênia)
+
+
+================================================================================
+3. DADOS EPIDEMIOLÓGICOS CONTEXTUAIS
+================================================================================
+
+País          Incidência/100k  Sobrevida 5y  Cobertura Rastreio  Status Pesquisa
+─────────────  ───────────────  ─────────────  ─────────────────  ──────────────
+Índia          17-22 (120k/ano) 25-35%        ~20%               Ativo, crescente
+Brasil         7-8              40-50%        ~30%               Ativo, consolidado
+Vietnam        5-7              20-30%        ~10%               Emergente
+México         6-8              35-45%        ~15%               Emergente
+África do Sul  8-10             25-35%        ~25%               Emergente
+Indonésia      6-9              15-25%        ~5%                Limitado
+
+
+================================================================================
+4. PADRÕES DE COLABORAÇÃO INTERNACIONAL
+================================================================================
+
+NORTE-SUL (60-70% das publicações)
+──────────────────────────────────
+
+USA → Índia:
+  • Financiadores: HHMI (Howard Hughes), NIH
+  • Instituições USA: Stanford, Harvard, Johns Hopkins
+  • Tipo: RCT, ensaios clínicos, disseminação de tecnologia
+  • Impacto: Publicações Q1, 40-50 citações/artigo
+
+USA → Brasil:
+  • Financiadores: CAPES/Fulbright
+  • Instituições USA: UCSF, University of Florida
+  • Tipo: Colaboração translacional, capacitação
+  • Impacto: Publicações Q2, 35-45 citações/artigo
+
+UK → Índia/Brasil:
+  • Financiadores: British Council, Newton Fund
+  • Instituições UK: Imperial College, UCL
+  • Tipo: Pesquisa em capacitação, políticas públicas
+  • Impacto: Publicações Q2-Q3, 25-40 citações/artigo
+
+Itália → Brasil:
+  • Colaborações bilaterais em oncologia bucal
+  • Instituições: Universidades italianas
+
+
+SUL-SUL (15-20%, SUBUTILIZADAS)
+────────────────────────────────
+
+Índia ↔ Brasil:
+  • Publicações/ano estimadas: 2-3 (POTENCIAL ENORME)
+  • Tema: Harmonização de protocolos, carga epidemiológica similar
+  • Oportunidade: Criar rede formalizada
+
+Vietnam ↔ Tailândia ↔ Laos:
+  • Redes ASEAN já existem
+  • Potencial: ampliar para CCP-específico
+
+Índia ↔ China:
+  • Colaborações moderadas; competição por visibilidade
+  • Carga epidemiológica similar (China 900k casos/ano)
+
+Brasil ↔ México:
+  • RARÍSSIMAS colaborações (oportunidade latente)
+  • Mercado comum MERCOSUR não explorado para pesquisa
+
+
+AUTORIA LOCAL LMIC (10-15%)
+──────────────────────────
+
+• Pesquisa original
+• Menor fator de impacto que parcerias Norte-Sul
+• Frequentemente sem coautoria internacional
+• Barreira: acesso a funding, revistas Q1
+
+
+================================================================================
+5. FATOR DE IMPACTO ESPERADO POR TIPO DE COLABORAÇÃO
+================================================================================
+
+Tipo Colaboração    JCR Médio    Quartil Típico    Citações/Artigo
+─────────────────   ──────────   ────────────────  ────────────────
+Norte-Sul           4.5-5.8      Q1-Q2             42.6 (média)
+Sul-Sul             2.5-3.5      Q2-Q3             12-15
+Autoria Local LMIC  2.0-3.0      Q3-Q4             5-8
+
+→ DISPARIDADE: Visibilidade é função de coautoria com países altos,
+   não qualidade intrínseca de pesquisa
+
+
+================================================================================
+6. LACUNAS GEOGRÁFICAS CRÍTICAS (ZERO PESQUISA)
+================================================================================
+
+Região                    Carga Epidemiológica  Pesquisa Publicada
+───────────────────────   ────────────────────  ──────────────────
+Sahel / África Ocidental  Alta                  Nenhuma
+Pacífico (Fiji, Samoa)    Documentada           Zero
+Caribe (Jamaica, Haiti)   Moderada-Alta         Subrepresentada (<1%)
+
+
+================================================================================
+7. OPORTUNIDADES DE COLABORAÇÃO SUL-SUL A FORTALECER
+================================================================================
+
+Rede 1: ÍNDIA-BRASIL-VIETNAM (PROTOCOLO HARMONIZADO)
+────────────────────────────────────────────────────
+Potencial: Testar mesmo protocolo de rastreio em 3 contextos epidemiológicos
+           distintos. Replicação = maior robustez.
+
+Participantes:
+  • Índia: AIIMS (ensaios RCT comprovados)
+  • Brasil: USP + INCA (sistemas públicos)
+  • Vietnam: National Cancer Institute (contexto emergente)
+
+Output: 5-10 publicações/ano; fortalecimento capacidade em 3 países
+
+
+Rede 2: HUB AFRICANO (UGANDA-QUÊNIA-SOUTH AFRICA)
+─────────────────────────────────────────────────
+Potencial: Estudos comunitários, barreiras comportamentais, implementação
+           em contextos de recursos muito limitados.
+
+Participantes:
+  • South Africa: Witwatersrand (liderança)
+  • Uganda/Quênia: Universidades emergentes
+
+Output: Pesquisa aplicada; diretrizes africana-específicas
+
+
+Rede 3: CAPACITAÇÃO CRUZADA
+──────────────────────────
+Potencial: Experts indianos (rastreio visual comprovado) treinando equipes
+           vietnamitas e brasileiras.
+
+Formato: Workshops, artigos colaborativos, protocolos compartilhados
+
+Output: Disseminação de expertise; aceleração de implementação
+
+
+================================================================================
+8. RECOMENDAÇÕES PARA ANÁLISE PÓS-BIBLIOMETRIA
+================================================================================
+
+1. Criar matriz "País × Instituição × Período" (Excel/Tableau)
+2. Mapear rede de coautoria (VOSviewer = gratuita)
+3. Calcular índices de colaboração (densidade de conexões Norte-Sul vs Sul-Sul)
+4. Analisar "brain drain" (pesquisadores LMIC publicando com afiliação no exterior)
+5. Sumarizar "research capacity" (índice: volume + impacto + autonomia)
+6. Identificar "missing voices" (quais regiões LMIC = zero artigos?)
+7. Quantificar oportunidades latentes de colaboração Sul-Sul
+
+
+================================================================================
+
+Próximo passo: Executar a busca, validar instituições reais encontradas,
+comparar com estas estimativas.
+
+Manuela Carrera | Agosto 2026

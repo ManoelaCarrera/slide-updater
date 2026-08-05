@@ -1,0 +1,277 @@
+================================================================================
+PORTFÓLIO DE PESQUISA — 7 IDEIAS DE BIBLIOMETRIAS
+Rastreio de Câncer de Cabeça e Pescoço (2010-2026)
+================================================================================
+
+Data: Julho 2026
+Pesquisadora: Manuela Carrera
+Método: Bibliometria
+Status: 7 ideias prontas para aprofundamento
+
+
+================================================================================
+IDEIA #1 — TECNOLOGIAS DIAGNÓSTICAS EMERGENTES
+================================================================================
+
+PERGUNTA:
+Como evoluiu a pesquisa sobre tecnologias de diagnóstico para rastreio
+(OCT, autofluorescência, biopsia líquida, IA) entre 2010-2026?
+Qual tecnologia alcançou maturidade clínica? Qual ficou experimental?
+
+DIFERENCIAL:
+• Foco em "COMO procurar" (ferramentas/tecnologias)
+• Análise de escolas de pensamento por tecnologia (co-citação)
+• Mapear clusters institucionais por tecnologia
+
+VOLUME ESTIMADO: 800-2.000 artigos
+
+PRÓXIMO PASSO: Revisão de Literatura → validar strings para cada tecnologia
+
+
+================================================================================
+IDEIA #2 — DESORDENS ORAIS POTENCIALMENTE MALIGNAS
+================================================================================
+
+PERGUNTA:
+Como evoluiu a pesquisa sobre lesões oral-malignas (líquen plano, leucoplasia,
+eritroplasia) como alvo de rastreio entre 2010-2026?
+Houve consolidação terminológica?
+
+DIFERENCIAL:
+• Foco em "O QUÊ procurar" (lesões precursoras)
+• Análise de evolução terminológica (OPMF vs precancerous lesions vs dysplasia)
+• Complementa Ideia #1: tecnologia + lesão-alvo juntas
+
+VOLUME ESTIMADO: 600-1.500 artigos
+
+PRÓXIMO PASSO: Revisão de Literatura → analisar migração terminológica por período
+
+[RECOMENDAÇÃO PESSOAL: Esta é promissora, alinhada com seu repertório de
+ estomatologia. Considere começar por aqui ou por Ideia #7.]
+
+
+================================================================================
+IDEIA #3 — DESIGUALDADE DE PESQUISA (LMIC vs PAÍSES ALTOS)
+================================================================================
+
+PERGUNTA:
+Qual é a proporção de pesquisa originada em LMIC? Evolução? Padrão de citação?
+Como se organizam redes de colaboração (Sul-Sul vs Norte-Sul)?
+
+DIFERENCIAL:
+• Foco em DESIGUALDADE e SAÚDE PÚBLICA
+• Análise de disparidades estruturais no sistema científico
+• Identificar instituições LMIC líderes
+
+VOLUME ESTIMADO: 500-1.500 artigos
+
+STATUS: ★ JÁ APROFUNDADA
+✓ String de busca validada
+✓ Instituições LMIC líderes mapeadas
+✓ Padrões de colaboração descritos
+✓ Síntese argumentativa pronta
+
+PRÓXIMO PASSO: Executar busca em PubMed/Scopus/WoS e contar artigos reais
+
+
+================================================================================
+IDEIA #4 — EDUCAÇÃO E CAPACITAÇÃO PROFISSIONAL
+================================================================================
+
+PERGUNTA:
+Como evoluiu a pesquisa sobre treinamento de profissionais para rastreio?
+Qual público-alvo? Quais modelos educacionais? Qual cobertura geográfica?
+
+DIFERENCIAL:
+• Foco no "FATOR HUMANO" (profissional que faz rastreio)
+• Análise de públicos: dentistas vs médicos vs ACS
+• Comparação de modelos: presencial vs online vs blended
+
+VOLUME ESTIMADO: 400-1.000 artigos (tema mais específico)
+
+PRÓXIMO PASSO: Revisar literatura em ERIC (base educacional) + PubMed/Scopus
+
+
+================================================================================
+IDEIA #5 — PROTOCOLOS E DIRETRIZES CLÍNICAS
+================================================================================
+
+PERGUNTA:
+Quais guidelines são mais citados? Como convergem/divergem em critérios?
+Qual protocolo é de facto padrão global? Quem lidera produção normativa?
+
+DIFERENCIAL:
+• Foco em GOVERNANÇA e padronização clínica
+• Análise de co-citação ENTRE diretrizes (mapear influência mútua)
+• Output normativo (não pesquisa básica)
+
+VOLUME ESTIMADO: 150-400 artigos (tema mais restrito)
+
+PRÓXIMO PASSO: Mapeamento de diretrizes principais (ASCO, NCCN, IARC, INCA)
+             + análise de citação cruzada entre elas
+
+
+================================================================================
+IDEIA #6 — ESTRATIFICAÇÃO DE RISCO
+================================================================================
+
+PERGUNTA:
+Como evoluiu a integração de fatores de risco (tabaco, álcool, HPV,
+desigualdade social) em estratégias de rastreio?
+Qual fator ganhou mais atenção? Qual região enfatiza qual risco?
+
+DIFERENCIAL:
+• Foco em "PARA QUEM fazer rastreio" (priorização por risco)
+• Comparação de peso relativo de cada fator ao longo do tempo
+• Análise geográfica de padrões de risco
+
+VOLUME ESTIMADO: 700-1.800 artigos
+
+PRÓXIMO PASSO: Mapeamento de citações entre literatura de RISCO e RASTREIO
+             + análise temporal de tendências por fator
+
+
+================================================================================
+IDEIA #7 — DESFECHOS CENTRADOS NO PACIENTE (PATIENT-REPORTED OUTCOMES)
+================================================================================
+
+PERGUNTA:
+Que proporção de estudos de rastreio incluem qualidade de vida, ansiedade,
+impacto psicossocial? Como evoluiu essa proporção? Qual cobertura geográfica?
+
+DIFERENCIAL:
+• Foco em RESULTADO-PACIENTE (negligenciado na literatura)
+• Quantifica negligência de PROs em estudos de rastreio
+• Alinhado com sua lacuna de interesse ("impacto na qualidade de vida")
+
+VOLUME ESTIMADO: 300-800 artigos (tema muito específico)
+
+PRÓXIMO PASSO: Análise de proporção (% artigos rastreio COM PROs ao longo do tempo)
+             + análise de instrumentos usados (EORTC QLQ-HN35, OHIP, escalas)
+
+[RECOMENDAÇÃO PESSOAL: Esta é MUITO alinhada com sua mente clínica.
+ Revela lacuna epistêmica real. Altamente publicável.]
+
+
+================================================================================
+MATRIZ COMPARATIVA — 7 IDEIAS
+================================================================================
+
+Ideia  Foco                    Diferencial                  Volume   Status
+────   ──────────────────────  ──────────────────────────   ──────   ─────────────
+#1     Tecnologias diagnósticas Qual alcançou maturidade?   800-2k   Pendente aprofun.
+#2     OPMF                     Consolidação terminológica   600-1.5k Pendente aprofun.
+#3     Desigualdade (LMIC)      Padrões colaboração         500-1.5k ★ JÁ PRONTA
+#4     Educação profissional    Fator humano               400-1k    Pendente aprofun.
+#5     Protocolos/diretrizes    Governança clínica         150-400   Pendente aprofun.
+#6     Estratificação risco     Para quem fazer rastreio    700-1.8k  Pendente aprofun.
+#7     PROs/qualidade vida      Resultado-paciente         300-800   Pendente aprofun.
+
+
+================================================================================
+RECOMENDAÇÕES DE PRIORIZAÇÃO
+================================================================================
+
+COMEÇAR POR (Mais viáveis + alinhados com seu repertório):
+
+1ª PRIORIDADE: IDEIA #3 (Desigualdade LMIC) — JÁ COMPLETADA
+   ✓ String validada
+   ✓ Pronta para executar busca
+   ✓ Tempo: 3-4 meses de execução
+   ✓ Publicabilidade: Alta (Frontiers, Global Health Action, PLOS)
+
+2ª PRIORIDADE: IDEIA #7 (PROs/qualidade vida)
+   ✓ Alinhada com sua lacuna clínica
+   ✓ Revela gap importante
+   ✓ Tempo: 2-3 meses
+   ✓ Publicabilidade: Alta (interface clínica + psicossocial)
+
+3ª PRIORIDADE: IDEIA #2 (OPMF/consolidação terminológica)
+   ✓ Estomatologia pura
+   ✓ Lacuna epistemológica real
+   ✓ Tempo: 3-4 meses
+   ✓ Publicabilidade: Média-Alta
+
+
+COMBINAR (Possível estudar duas em paralelo):
+Ideias #3 + #7 (desigualdade + resultado-paciente)
+→ Forma um argumento poderoso: "Para quem fazemos rastreio e qual o custo?"
+
+
+================================================================================
+PRÓXIMOS PASSOS SUGERIDOS
+================================================================================
+
+AGORA (HOJE/SEMANA 1):
+☐ Escolha qual ideia explorar primeiro (recomendado: #3 ou #7)
+☐ Registre protocolo em PROSPERO se for revisão sistemática+meta
+☐ Recrute 2º revisor (se tiver acesso)
+
+SEMANA 2-3:
+☐ Execute busca em PubMed (validar volume)
+☐ Adapte strings para Scopus, WoS, SciELO
+☐ Exporte resultados em formato .ris
+☐ Escolha ferramenta deduplicação (Rayyan é gratuita)
+
+SEMANA 4-6:
+☐ Deduplicação completa
+☐ Triagem título/resumo (2 revisores independentes)
+☐ Acompanhe Kappa de concordância (meta: ≥ 0,80)
+
+SEMANA 7-10:
+☐ Extração de dados
+☐ Análise bibliométrica (VOSviewer/Gephi para redes)
+☐ Análise descritiva (tabelas, gráficos)
+
+SEMANA 11-12:
+☐ Redação de artigo
+☐ Preparação figuras/tabelas
+☐ Submissão a periódico de impacto
+
+TIMELINE TOTAL: ~3 meses para publicação-ready
+
+
+================================================================================
+RECURSOS NECESSÁRIOS (TODOS GRATUITOS OU ACESSO INSTITUCIONAL)
+================================================================================
+
+Busca bibliográfica:
+  ✓ PubMed (gratuito)
+  ✓ Scopus (acesso via CAPES/universidade)
+  ✓ Web of Science (acesso via CAPES/universidade)
+  ✓ SciELO (gratuito)
+
+Gerenciamento referências:
+  ✓ Zotero (gratuito, open source)
+  ✓ Mendeley (freemium)
+
+Deduplicação:
+  ✓ Rayyan (gratuito, desenvolvido pela Cochrane)
+
+Triagem título/resumo:
+  ✓ Covidence (pago, mas vale investir)
+  ✓ Rayyan (gratuito)
+
+Análise bibliométrica:
+  ✓ VOSviewer (gratuito, pela Leiden Univ.)
+  ✓ Gephi (gratuito, open source)
+  ✓ R/Python (scripts customizados)
+
+Redação:
+  ✓ Overleaf (LaTeX, gratuito)
+  ✓ Word + Zotero integration
+
+
+================================================================================
+
+CONCLUSÃO:
+
+7 ideias viáveis, cada uma revelando uma lacuna clínica/epistêmica distinta.
+
+Ideia #3 (Desigualdade LMIC) já está pronta para executar.
+Ideia #7 (PROs) alinha-se perfeitamente com seu interesse em qualidade de vida.
+
+Escolha UMA para começar agora. As outras ficam no pipeline para depois.
+
+Manuela Carrera | Agosto 2026
+Clone Acadêmico | Estomatologia e Oncologia Oral

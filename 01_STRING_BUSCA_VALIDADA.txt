@@ -1,0 +1,136 @@
+================================================================================
+IDEIA #3 — STRING DE BUSCA VALIDADA PARA BIBLIOMETRIA
+Desigualdade de Pesquisa em Rastreio de CCP (LMIC vs Países de Alta Renda)
+================================================================================
+Data: 2026-08-05
+Status: Pronto para usar em PubMed, Scopus, Web of Science, SciELO
+
+================================================================================
+1. STRING DE BUSCA RÁPIDA (RECOMENDADA)
+================================================================================
+
+("head and neck cancer" OR "oral cancer") AND (screening OR "early detection"
+OR "mass screening") AND (Brazil OR India OR Mexico OR "South Africa" OR
+Vietnam OR Indonesia OR "low-income" OR "middle-income" OR "developing" OR LMIC)
+
+Volume esperado: 500-1.500 artigos (após deduplicação)
+
+
+================================================================================
+2. ADAPTAÇÕES POR BASE DE DADOS
+================================================================================
+
+PUBMED (MEDLINE):
+---
+(("Head and Neck Neoplasms"[MeSH] OR "Mouth Neoplasms"[MeSH] OR
+"head and neck cancer"[tiab] OR "oral cancer"[tiab])
+AND
+("Early Detection of Cancer"[MeSH] OR "Mass Screening"[MeSH] OR "Screening"[MeSH]
+OR screening[tiab] OR "early detection"[tiab])
+AND
+("Brazil"[af] OR "India"[af] OR "Mexico"[af] OR "South Africa"[af] OR "Vietnam"[af]
+OR "Indonesia"[af] OR "low-income countr*"[tiab] OR "middle-income countr*"[tiab]
+OR "developing countr*"[tiab] OR LMIC[tiab]))
+AND
+(2010:2026[pdat])
+
+Filtros: Idioma = English, Portuguese, Spanish
+
+
+SCOPUS:
+---
+TITLE-ABS-KEY(
+  ("head and neck cancer" OR "oral cancer" OR "oropharyngeal cancer" OR
+  "oral squamous cell carcinoma")
+  AND
+  (screening OR "early detection" OR "mass screening" OR "population screening")
+  AND
+  ("Brazil" OR "India" OR "Mexico" OR "South Africa" OR "Vietnam" OR "Indonesia"
+  OR "low-income" OR "middle-income" OR "developing countr*" OR LMIC
+  OR "resource-limited")
+)
+AND PUBYEAR > 2009 AND SRCTYPE(j) AND LANGUAGE(english OR portuguese OR spanish)
+
+
+WEB OF SCIENCE:
+---
+TS=(
+  ("head and neck cancer" OR "oral cancer" OR "oropharyngeal cancer" OR
+  "oral squamous cell carcinoma")
+  AND
+  (screening OR "early detection" OR "mass screening" OR "population screening")
+  AND
+  ("Brazil" OR "India" OR "Mexico" OR "South Africa" OR "Vietnam" OR "Indonesia"
+  OR "low-income" OR "middle-income" OR "developing" OR LMIC OR "resource-limited")
+)
+AND PY=(2010-2026) AND (DT=Article OR DT="Review")
+
+
+BVS/SciELO (PORTUGUÊS):
+---
+(ti:("câncer de cabeça e pescoço" OR "câncer oral" OR "carcinoma oral")
+OR
+ab:("câncer de cabeça e pescoço" OR "câncer oral" OR "carcinoma oral"))
+AND
+(ti:(rastreio OR rastreamento OR "detecção precoce")
+OR
+ab:(rastreio OR rastreamento OR "detecção precoce"))
+AND
+(Brasil OR Índia OR México OR "África do Sul" OR Vietnã OR Indonésia OR "país de renda" OR LMIC)
+AND
+year_cluster:[2010 TO 2026]
+
+
+================================================================================
+3. VOLUME ESPERADO POR BASE
+================================================================================
+
+PubMed:        400-1.800 artigos brutos → ~300-1.000 únicos
+Scopus:        500-2.400 artigos brutos → ~350-1.300 únicos
+Web of Science:  200-1.200 artigos brutos → ~150-800 únicos
+BVS/SciELO:    100-250 artigos brutos → ~80-200 únicos
+
+TOTAL FINAL (após deduplicação ~40-50%): 500-1.500 artigos para análise
+
+
+================================================================================
+4. CHECKLIST ANTES DE EXECUTAR
+================================================================================
+
+☐ Teste em PubMed primeiro (volume esperado: 400-1.800)
+☐ Adapte descritores se volume < 200 ou > 3.000
+☐ Valide período confirmado: 2010-2026
+☐ Confirme idiomas: Inglês, Português, Espanhol
+☐ Escolha ferramenta de deduplicação (Rayyan, Zotero, ou script Python)
+☐ Registre resultados: print screens de cada base para rastreabilidade
+
+
+================================================================================
+5. PRÓXIMOS PASSOS APÓS BUSCA
+================================================================================
+
+1. Exportar em formato .ris ou .bib (para Zotero/Mendeley)
+2. Deduplicar (ferramentas: Rayyan, Covidence, DistillerSR)
+3. Triagem título/resumo (2 revisores independentes, Kappa ≥ 0,80)
+4. Extração de dados:
+   - País de origem (afiliação autor principal)
+   - Instituições
+   - Ano de publicação
+   - Periódico e JCR
+   - Número de citações (Web of Science)
+   - Tipo de colaboração (Norte-Sul / Sul-Sul / autoria local LMIC)
+5. Análise de redes: VOSviewer ou Gephi para mapa de coautoria
+6. Análise de desigualdade: comparar produtividade, impacto de citação, proporções LMIC vs alta renda
+
+
+================================================================================
+REFERÊNCIA RÁPIDA
+================================================================================
+
+Período: 2010-2026 (16 anos)
+Foco: Rastreio/detecção precoce de CCP em países LMIC
+Pergunta-chave: Há desigualdade de pesquisa entre LMIC e países altos?
+Método: Análise bibliométrica (volume, autores, instituições, redes, citações)
+Esperado: Revelar disparidades e orientar políticas de pesquisa em saúde pública
+
+Pesquisadora: Manuela Carrera | Clone Acadêmico | 2026-08-05

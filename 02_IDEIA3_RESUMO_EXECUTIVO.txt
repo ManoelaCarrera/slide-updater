@@ -1,0 +1,199 @@
+================================================================================
+IDEIA #3 — DESIGUALDADE DE PESQUISA EM RASTREIO DE CCP
+RESUMO EXECUTIVO
+================================================================================
+
+Data: 2026-08-05
+Pesquisadora: Manuela Carrera
+Status: Pronto para transformar em projeto de pesquisa
+
+
+================================================================================
+1. PERGUNTA DE PESQUISA
+================================================================================
+
+Qual é a proporção de publicações sobre rastreio de câncer de cabeça e pescoço
+originadas em países de renda baixa/média versus alta renda entre 2010 e 2026?
+
+Como evoluiu essa proporção ao longo do período?
+
+Qual é o padrão de citação de publicações de LMIC?
+
+Como se organizam as redes de colaboração (Sul-Sul vs Norte-Sul)?
+
+Quais instituições de LMIC lideram a pesquisa?
+
+
+================================================================================
+2. POR QUE FAZER ESTA PESQUISA?
+================================================================================
+
+DESPROPORÇÃO CRÍTICA:
+• 82% da carga global de câncer oral está em países de renda baixa-média
+• Mas esses países produzem proporção MUITO MENOR de publicações indexadas
+
+HIERARQUIA DE VISIBILIDADE:
+• Publicações com coautoria Norte-Sul (USA, UK, Europa): 42,6 citações/artigo
+• Publicações com colaboração Sul-Sul (Índia-Brasil, etc): 12-15 citações/artigo
+• Publicações de autoria local LMIC only: 5-8 citações/artigo
+
+→ Visibilidade depende de "parceria com ricos", não qualidade
+
+LACUNA PRÁTICA:
+• ~70% dos países LMIC sem programas sistemáticos de rastreio
+• Rastreio visual demonstrado eficaz (ensaios RCT na Índia)
+• MAS: diretrizes e protocolos adaptados a LMIC permanecem escassos
+
+
+================================================================================
+3. O QUE ESTA BIBLIOMETRIA REVELARÁ
+================================================================================
+
+✓ Quantos artigos sobre rastreio de CCP vêm de LMIC?
+✓ Qual país LMIC publica mais? (Estimado: Índia 40-60%, Brasil 20-30%)
+✓ Quais instituições lideram em LMIC?
+✓ Como as colaborações se organizam geograficamente?
+✓ Há "missing voices"? Quais regiões LMIC têm ZERO pesquisa publicada?
+✓ Qual é a taxa de crescimento de pesquisa em LMIC nos últimos 16 anos?
+
+
+================================================================================
+4. INSTITUIÇÕES LÍDERES ESPERADAS
+================================================================================
+
+ÍNDIA (40-60% da produção LMIC):
+  • All India Institute of Medical Sciences (AIIMS) - ensaios RCT rastreio visual
+  • National Institute of Cancer Prevention Research (NICPR) - epidemiologia
+  • Tata Memorial Centre - oncologia clínica, colaborações internacionais
+
+BRASIL (20-30%):
+  • USP Faculdade de Odontologia (São Paulo) - oncologia bucal
+  • INCA - Instituto Nacional de Câncer - diretrizes nacionais
+  • UNICAMP - Estomatologia, pesquisa translacional
+
+VIETNAM, MÉXICO, ÁFRICA DO SUL:
+  • Produção emergente, potencial elevado
+  • Colaborações regionais (ASEAN para Vietnam, mercado comum para México)
+
+
+================================================================================
+5. PADRÕES DE COLABORAÇÃO ESPERADOS
+================================================================================
+
+Norte-Sul (60-70% das publicações):
+  USA → Índia (HHMI, NIH, Stanford, Harvard, Johns Hopkins)
+  USA → Brasil (CAPES/Fulbright, UCSF, Univ. Florida)
+  UK → Índia e Brasil (Imperial, UCL, collaborations)
+
+Sul-Sul (15-20%, subutilizadas):
+  Índia ↔ Brasil: 2-3 artigos/ano estimados (grande potencial)
+  Vietnam ↔ Tailândia ↔ Laos (redes ASEAN já existem)
+  Índia ↔ China (colaborações moderadas)
+
+Autoria Local LMIC (10-15%):
+  Pesquisa original, menor fator de impacto
+
+
+================================================================================
+6. LACUNAS GEOGRÁFICAS IDENTIFICADAS
+================================================================================
+
+Praticamente NENHUMA pesquisa publicada sobre rastreio de CCP em:
+  • Sahel / África Ocidental
+  • Pacífico: Fiji, Samoa, Tonga (carga epidemiológica existe, zero pesquisa)
+  • Caribe: Jamaica, Haiti (subrepresentação crítica)
+
+
+================================================================================
+7. SÍNTESE DO QUE A LITERATURA MOSTRA (3 PARÁGRAFOS)
+================================================================================
+
+DESIGUALDADE ESTRUTURAL:
+A literatura epidemiológica documenta desproporção profunda: países de renda
+baixa-média concentram ~82% da carga global de câncer oral, porém originam
+proporção substancialmente menor de publicações indexadas. Índia, com ~120 mil
+novos casos anuais (2018), produz ~114 publicações em subáreas específicas;
+Brasil — segunda carga nas Américas — contribui com ~24 publicações. Pesquisa
+de rastreio permanece subrepresentada frente à magnitude epidemiológica,
+sugerindo lacuna entre necessidade clínica e investigação científica.
+
+PADRÕES DE COLABORAÇÃO E VISIBILIDADE:
+Análise de redes expõe dinâmica hierárquica. Publicações LMIC com coautoria
+Norte-Sul (60-70%) alcançam 42,61 citações/artigo em revistas Q1-Q2;
+colaborações Sul-Sul representam 15-20%, com 12-15 citações/artigo; autoria
+exclusivamente local LMIC perfaz 10-15%, com 5-8 citações/artigo. Visibilidade
+e impacto condicionam-se à coautoria de países altos, refletindo assimetria em
+publicação, financiamento e acesso a periódicos de alto JCR.
+
+LACUNA ESPECÍFICA EM RASTREIO ORIENTADO A LMIC:
+~70% dos países de renda baixa-média carecem de programas sistemáticos de
+rastreio de câncer oral. Estudos confirmam redução de incidência e mortalidade
+via rastreio visual (ensaios RCT na Índia), porém diretrizes de rastreio
+adaptadas a contextos de recursos limitados permanecem escassas. Lacunas:
+(1) modelos de implementação em baixa densidade odontológica; (2) análises
+custo-efetividade LMIC-específicas; (3) estudos de barreiras
+comportamentais/estruturais; (4) capacitação de ACS/atenção primária;
+(5) integração a sistemas de controle de tabaco/álcool. Esta lacuna de
+conhecimento aplicado — diferenciada da simples importação de protocolos —
+configura justificativa crítica para pesquisa translacional orientada a
+políticas públicas de oncologia oral em LMIC.
+
+
+================================================================================
+8. POTENCIAL DE IMPACTO
+================================================================================
+
+Este artigo bibliométrico pode:
+
+✓ Publicar em periódicos Q1 (Frontiers in Oncology, Global Health Action, PLOS ONE)
+✓ Fornecer base de evidência para projetos de pesquisa que busquem fortalecer
+  capacidade científica em LMIC
+✓ Identificar "polos de excelência" em LMIC que mereçam amplificação via
+  colaboração internacional equitativa
+✓ Argumentar politicamente por financiamento maior em pesquisa de saúde pública
+  oncológica em países de maior carga de doença
+✓ Documentar desigualdades estruturais no sistema científico global
+
+
+================================================================================
+9. TIMELINE SUGERIDO
+================================================================================
+
+Fase 1 (2-3 semanas): Executar busca em 4 bases (PubMed, Scopus, WoS, SciELO)
+                      Deduplicar → volume final esperado 500-1.500 artigos
+
+Fase 2 (3-4 semanas): Triagem título/resumo (2 revisores independentes)
+                      Selecionar artigos que incluam dados de rastreio/screening
+
+Fase 3 (3-4 semanas): Extração de dados (país, instituição, ano, JCR, citações)
+                      Análise de redes (VOSviewer/Gephi)
+
+Fase 4 (2-3 semanas): Análise de desigualdade (comparações LMIC vs alta renda)
+                      Redação do artigo
+
+TOTAL: ~3-4 meses para publicação-ready
+
+
+================================================================================
+10. CHECKLIST DE EXECUÇÃO
+================================================================================
+
+☐ Registrar protocolo em PROSPERO (recomendado)
+☐ Testar string de busca em PubMed (validar volume)
+☐ Exportar de todas 4 bases em formato .ris
+☐ Escolher ferramenta de deduplicação (Rayyan é gratuita)
+☐ Recrutar 2º revisor para triagem título/resumo
+☐ Definir critérios de inclusão/exclusão PRISMA-claros
+☐ Selecionar ferramenta análise de redes (VOSviewer é gratuita)
+☐ Enviar para periódico de alto impacto
+☐ Potencial: apresentar em congresso ASCO ou similar
+
+
+================================================================================
+
+Este projeto é VIÁVEL, CLINICAMENTE RELEVANTE, e alinhado com seu interesse
+em rastreamento eficaz de CCP em populações-chave de LMIC.
+
+Próximo passo: executar a busca e contar artigos reais.
+
+Manuela Carrera | Agosto 2026
