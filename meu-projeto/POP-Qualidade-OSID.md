@@ -1,4 +1,4 @@
-# PROCEDIMENTO OPERACIONAL PADRÃO — QUALIDADE
+# PROCEDIMENTO GERENCIAL — QUALIDADE
 ## Serviço de Odontologia Oncológica — OSID
 
 ---
@@ -40,7 +40,7 @@ Abrange toda equipe de odontologia do OSID, independente de cargo ou nível hier
 | **Coordenadora - Manuela Carrera** | Garantir aplicação consistente dos princípios de qualidade; liderar reuniões de discussão de casos; monitorar indicadores; comunicar com gestão institucional |
 | **Subcoordenador - Éder Gerardo** | Apoiar coordenadora na operacionalização; servir como elo com equipe; garantir conformidade com procedimentos |
 | **Dentistas - Ana Carolina Pondé, Tila Fortuna, Juliana Borges** | Aplicar os critérios de qualidade em cada atendimento; realizar avaliação odontológica completa e estratificação de risco (G1/G2/G3); registrar documentação completa, incluindo parâmetros de FBML/aTFD; participar de discussões colegiadas; reportar dificuldades ou melhorias sugeridas |
-| **Toda equipe de odontologia** | Conhecer este POP e o Protocolo Clínico Assistencial; aplicar os 7 pilares em todas as ações; engajar em monitoramento contínuo |
+| **Toda equipe de odontologia** | Conhecer este Procedimento Gerencial e o Protocolo Clínico Assistencial; aplicar os 7 pilares em todas as ações; engajar em monitoramento contínuo |
 
 **Equipe multidisciplinar — responsabilidades de interface** (conforme Protocolo Clínico Assistencial):
 
@@ -92,96 +92,71 @@ Abrange toda equipe de odontologia do OSID, independente de cargo ou nível hier
 
 ## 5. DESCRIÇÃO DO PROCEDIMENTO
 
-### 5.1 Fundamentos — Os 7 Pilares de Qualidade
+**Fundamentos que orientam todas as etapas — Os 7 Pilares de Qualidade**
 
-Toda ação assistencial do Serviço de Odontologia Oncológica do OSID é guiada por **7 pilares de qualidade** que definem como a equipe trabalha:
+Toda etapa deste procedimento é orientada por 7 pilares: (1) segurança do paciente; (2) excelência com recursos reais do SUS; (3) decisão colegiada e transparente; (4) equidade e respeito; (5) documentação e rastreabilidade; (6) integração multidisciplinar; (7) autonomia técnica da odontologia — o reconhecimento de que a saúde bucal é central para o sucesso do tratamento oncológico. Esses pilares não são uma etapa isolada; atravessam cada uma das etapas descritas a seguir.
 
-**Pilar 1: Segurança do Paciente**
-- Nenhuma ação que comprometa a integridade física, psicológica ou informativa do paciente
-- Protocolos claros para prevenção de infecção, lesão ou complicação
-- Comunicação honesta sobre riscos e benefícios
+As etapas abaixo descrevem, na ordem em que acontecem, como a qualidade do Serviço é definida, executada, monitorada e ajustada.
 
-**Pilar 2: Excelência com Recursos Reais**
-- Decisões clínicas baseadas em melhor evidência disponível E restrições SUS (tempo, custo, materiais)
-- Criatividade operacional para não comprometer qualidade
-- Documentação clara do "por quê" de cada decisão
+### 5.1 Definição dos Padrões de Qualidade por Grupo de Risco
 
-**Pilar 3: Decisão Colegiada e Transparente**
-- Equipe reúne-se para discutir casos complexos e definir condutas
-- Cada membro tem voz; nenhuma decisão é imposta
-- Paciente compreende a sequência lógica do atendimento
+- A Coordenadora, o Subcoordenador e os Dentistas reúnem-se para definir os critérios de qualidade aplicáveis a cada grupo de risco do Protocolo Clínico Assistencial (G1, G2, G3).
+- Estabelecem a frequência mínima de acompanhamento por grupo:
 
-**Pilar 4: Equidade e Respeito**
-- Mesmo cuidado para todos, independente de escolaridade ou demanda inicial
-- Respeito à dignidade, autonomia e contexto de vida do paciente
-- Educação em saúde adaptada ao nível de compreensão
-
-**Pilar 5: Documentação e Rastreabilidade**
-- Cada atendimento é registrado de forma completa e acessível
-- Documentação evidencia decisões clínicas, resultados e aprendizados
-- Segurança legal e continuidade do cuidado garantidas
-
-**Pilar 6: Integração Multidisciplinar**
-- Comunicação clara com fonoaudiologia, fisioterapia, psicologia, oncologia, enfermagem
-- Respeito às competências de cada especialidade
-- Paciente recebe cuidado coordenado e coerente
-
-**Pilar 7: Autonomia Técnica da Odontologia**
-- Reconhecimento de que saúde bucal é **central** para qualidade de vida, nutrição e sucesso do tratamento oncológico
-- Odontologia participa como especialidade co-responsável nas decisões
-- Evidência clínica sustenta cada recomendação odontológica
-
-### 5.2 Padrões de Qualidade por Grupo de Risco
-
-A aplicação dos 7 pilares é **individualizada conforme o grupo de risco** definido no Protocolo Clínico Assistencial, respeitando a condição oncológica, a fase do tratamento e a complicação oral predominante:
-
-| Grupo | Perfil | Frequência mínima de acompanhamento | Foco de qualidade |
+| Grupo | Perfil | Frequência mínima | Foco de qualidade |
 |---|---|---|---|
-| **G1** | CP em RT (isolada ou + QT) | Dias alternados, conforme frequência do paciente à radioterapia | Avaliação odontológica **antes do início da RT** sempre que possível; manejo preventivo da MO |
+| **G1** | CP em RT (isolada ou + QT) | Dias alternados, conforme frequência do paciente à radioterapia | Avaliação odontológica antes do início da RT, sempre que possível; manejo preventivo da MO |
 | **G2** | Tumores sólidos em QT citotóxica | Semanal, conforme ciclo de QT | Avaliação de parâmetros hematológicos antes de procedimento invasivo; manejo da MO e infecções oportunistas |
-| **G3** | ORN/OAM sob uso de BF | Duas vezes por semana até regressão do quadro (intervalo pode aumentar conforme evolução clínica e logística do paciente) | Avaliação detalhada da área comprometida; documentação completa de FBML/aTFD; escalonamento precoce para equipe médica/cirúrgica quando indicado |
+| **G3** | ORN/OAM sob uso de BF | Duas vezes por semana até regressão do quadro | Avaliação detalhada da área comprometida; documentação completa de FBML/aTFD; escalonamento precoce quando indicado |
 
-**Critério de qualidade transversal:** todo atendimento a paciente G1, G2 ou G3 deve conter, no prontuário, o grupo de estratificação, a data da última avaliação e a conduta vigente — isso permite auditoria rápida da linha de cuidado.
+- Registram os padrões definidos neste documento e os comunicam a toda a equipe em reunião.
 
-### 5.3 Aplicação Operacional — Ciclo de Qualidade
+### 5.2 Avaliação Odontológica Inicial e Classificação de Risco
 
-**Passo 1: Planejamento e Definição de Padrões**
-- Coordenadora, Subcoordenador e Dentistas definem critérios específicos para cada tipo de atendimento (atendimento inicial, preparo pré-quimio, protocolo de mucosite, etc.), com base no Protocolo Clínico Assistencial
-- Critérios são documentados em POPs específicos
-- Critérios são comunicados e discutidos com toda equipe
+- O Dentista responsável realiza a avaliação odontológica inicial do paciente, conforme roteiro do Protocolo Clínico Assistencial.
+- Classifica o paciente no grupo de risco correspondente (G1, G2 ou G3).
+- Registra a avaliação completa no prontuário (Formulário OSID-PRONT-001), incluindo grupo de risco, data da avaliação e conduta definida.
+- Se o paciente for do grupo G1, o Dentista responsável verifica se a avaliação está ocorrendo **antes do início da radioterapia**; se a RT já foi iniciada, registra o motivo do atraso.
 
-**Passo 2: Execução Conforme Padrão**
-- Cada profissional aplica os critérios definidos em cada atendimento
-- Documentação completa é feita em tempo real (prontuário eletrônico ou impresso)
-- Toda sessão de FBML/aTFD é registrada com comprimento de onda, potência, energia por ponto, área do spot, número e localização dos pontos, e resposta clínica — sem esse registro, a sessão é considerada **não documentada** para fins de qualidade
-- Dificuldades operacionais são reportadas ao Subcoordenador ou Coordenadora
+### 5.3 Execução do Atendimento e Documentação
 
-**Passo 3: Monitoramento Mensal de Indicadores**
-- Coordenadora calcula indicadores de qualidade (exemplo: % de atendimentos completamente documentados, % de pacientes que compreenderam o plano, tempo médio de atendimento inicial)
-- Dados são apresentados à equipe em reunião mensal
-- Equipe discute: estamos no alvo? O que está funcionando? O que precisa melhorar?
+- O Dentista responsável aplica a conduta clínica definida, respeitando a frequência de acompanhamento do grupo (Seção 5.1).
+- Documenta o atendimento em tempo real no prontuário.
+- Quando há aplicação de FBML ou aTFD, registra a sessão no Formulário OSID-FBML-001, com comprimento de onda, potência, energia por ponto, número e localização dos pontos, e resposta clínica.
+- Se a documentação estiver incompleta ao final do atendimento, o Dentista responsável completa o registro antes do encerramento do expediente — sem isso, a sessão é considerada **não documentada** para fins de qualidade.
+- Dificuldades operacionais identificadas durante o atendimento são reportadas ao Subcoordenador ou à Coordenadora.
 
-**Passo 4: Discussão Colegiada de Casos Complexos**
-- Casos com desfechos inesperados ou decisões difíceis são levados à equipe
-- Discussão segue formato: situação clínica → evidência científica → decisão tomada → resultado → aprendizado
-- Nenhuma culpabilização; foco em aprender junto
+### 5.4 Escalonamento à Equipe Multidisciplinar
 
-**Passo 5: Ajuste Contínuo**
-- Com base em monitoramento e discussões, ajustes são propostos
-- Mudanças são testadas, avaliadas e documentadas
-- Ciclo reinicia
+- O Dentista responsável identifica, durante o atendimento, a necessidade de encaminhamento a outra especialidade, conforme os critérios:
+  - **Nutrição:** dor ou mucosite comprometendo a ingestão alimentar
+  - **Fonoaudiologia:** alteração de deglutição, mastigação, fala ou função orofacial
+  - **Psicologia:** sinais de sofrimento psíquico, ansiedade ou dificuldade de adesão ao tratamento
+  - **Fisioterapia:** trismo, limitação de abertura bucal ou edema/linfedema de CP
+  - **Equipe médica/cirúrgica de CP:** suspeita de recorrência/progressão tumoral, ou ORN/OAM complexa
+- Registra o encaminhamento no prontuário (Formulário OSID-INTEG-001), com data e motivo.
+- Comunica a especialidade correspondente.
 
-### 5.4 Integração Multidisciplinar — Critérios de Escalonamento
+### 5.5 Monitoramento Mensal de Indicadores
 
-A qualidade do cuidado odonto-oncológico depende de comunicação oportuna com a equipe multidisciplinar (ver responsabilidades na Seção 3). Para fins de qualidade, define-se **quando** o escalonamento é obrigatório:
+- A Coordenadora consolida, ao final de cada mês, os indicadores de qualidade do Serviço (documentação completa, adesão à frequência por grupo, documentação de FBML/aTFD, avaliação pré-RT, compreensão do paciente, escalonamento oportuno — ver Seção 7).
+- Registra os resultados no Relatório Mensal de Indicadores (Formulário OSID-REL-MEN-001).
+- Apresenta os resultados à equipe em reunião mensal.
+- Se algum indicador estiver abaixo da meta, a equipe discute a causa e define uma ação de correção, registrada na Ata de Reunião.
 
-- **Para Nutrição:** paciente com dor/mucosite comprometendo ingestão alimentar
-- **Para Fonoaudiologia:** alteração de deglutição, mastigação, fala ou função orofacial identificada no exame odontológico
-- **Para Psicologia:** sinais de sofrimento psíquico, ansiedade ou dificuldade de adesão ao tratamento
-- **Para Fisioterapia:** trismo, limitação de abertura bucal ou edema/linfedema de CP
-- **Para Equipe médica/cirúrgica de CP:** suspeita de recorrência/progressão tumoral, ORN/OAM complexa, ou necessidade de abordagem cirúrgica
+### 5.6 Discussão Colegiada de Casos Complexos
 
-Todo encaminhamento é registrado em prontuário, com data e motivo — isso é o que permite auditar se a integração multidisciplinar está de fato acontecendo (ver indicador na Seção 7).
+- Qualquer membro da equipe pode levar um caso complexo (gravidade elevada, paciente G3, dúvida diagnóstica ou desfecho inesperado) para discussão em equipe.
+- A discussão segue a sequência: situação clínica → evidência científica → decisão tomada → resultado → aprendizado.
+- A Coordenadora ou o Subcoordenador registram a discussão e a decisão na Ata de Reunião (Formulário OSID-ATA-001).
+- Não há culpabilização individual; o foco é o aprendizado coletivo.
+
+### 5.7 Ajuste Contínuo do Procedimento
+
+- Com base no monitoramento mensal (5.5) e nas discussões de casos (5.6), a equipe propõe ajustes aos padrões de qualidade.
+- Se a Coordenadora aprova o ajuste, ele é testado, documentado e incorporado a este procedimento.
+- Se o ajuste não funcionar como esperado, a equipe retoma a discussão e propõe uma alternativa.
+- Toda alteração é registrada no Histórico de Revisões (Seção 10).
 
 ---
 
@@ -272,6 +247,7 @@ Todos os atendimentos geram documentação que evidencia a qualidade:
 |---|---|---|---|
 | 28/09/2026 | Documento completo | Versão inicial — Estruturação de Qualidade Geral OSID com 7 pilares | 1.0 |
 | 28/09/2026 | Seções 2, 3, 4, 5, 6, 7, 8 | Refinamento com base no Protocolo Clínico Assistencial: grupos de risco G1/G2/G3, ações da equipe multidisciplinar, terminologia alinhada, referências bibliográficas reais, indicadores por frequência de grupo, registros específicos (FBML/aTFD, escalas de MO) | 2.0 |
+| 28/09/2026 | Título e Seção 5 | Reclassificado de Procedimento Operacional Padrão para **Procedimento Gerencial** (distinção formal OSID); Seção 5 reescrita em etapas numeradas de ação, conforme modelo institucional | 3.0 |
 |  |  |  |  |
 
 ---
