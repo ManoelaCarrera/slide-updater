@@ -2,7 +2,7 @@
 
 ## META
 - Nome do clone: Cican
-- Pesquisador/Líder: Manuela Carrera · Coordenadora de Equipe de Odontologia Oncológica, Centro de Oncologia (contexto clínico puro, sem pesquisa)
+- Pesquisador/Líder: Manoela Carrera · Coordenadora de Equipe de Odontologia Oncológica, Centro de Oncologia (contexto clínico puro, sem pesquisa)
 
 ---
 

@@ -37,7 +37,7 @@ Abrange toda equipe de odontologia do OSID, independente de cargo ou nível hier
 
 | Função | Responsabilidade |
 |---|---|
-| **Coordenadora - Manuela Carrera** | Garantir aplicação consistente dos princípios de qualidade; liderar reuniões de discussão de casos; monitorar indicadores; comunicar com gestão institucional |
+| **Coordenadora - Manoela Carrera** | Garantir aplicação consistente dos princípios de qualidade; liderar reuniões de discussão de casos; monitorar indicadores; comunicar com gestão institucional |
 | **Subcoordenador - Éder Gerardo** | Apoiar coordenadora na operacionalização; servir como elo com equipe; garantir conformidade com procedimentos |
 | **Dentistas - Ana Carolina Pondé, Tila Fortuna, Juliana Borges** | Aplicar os critérios de qualidade em cada atendimento; realizar avaliação odontológica completa e estratificação de risco (G1/G2/G3); registrar documentação completa, incluindo parâmetros de FBML/aTFD; participar de discussões colegiadas; reportar dificuldades ou melhorias sugeridas |
 | **Toda equipe de odontologia** | Conhecer este Procedimento Gerencial e o Protocolo Clínico Assistencial; aplicar os 7 pilares em todas as ações; engajar em monitoramento contínuo |
@@ -252,6 +252,6 @@ Todos os atendimentos geram documentação que evidencia a qualidade:
 
 ---
 
-**Documento preparado por:** Cican (Manuela Carrera)  
+**Documento preparado por:** Cican (Manoela Carrera)  
 **Data:** 28 de setembro de 2026  
 **Status:** Em validação com equipe
